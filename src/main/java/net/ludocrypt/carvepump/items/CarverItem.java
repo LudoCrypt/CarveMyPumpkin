@@ -1,12 +1,13 @@
 package net.ludocrypt.carvepump.items;
 
+import java.util.Arrays;
 import java.util.Set;
 import java.util.function.Consumer;
 
 import com.google.common.collect.Sets;
 
 import net.ludocrypt.carvepump.CarveMyPumpkin;
-import net.ludocrypt.carvepump.blocks.CMPCarvedPumpkinBlock;
+import net.ludocrypt.carvepump.blocks.CarvableBlock;
 import net.ludocrypt.carvepump.blocks.entity.CarvedBlockEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -47,63 +48,77 @@ public class CarverItem extends MiningToolItem {
 		BlockPos pos = context.getBlockPos();
 		World world = context.getWorld();
 		Direction dir = context.getSide();
-
+		Block block = world.getBlockState(pos).getBlock();
 		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity instanceof CarvedBlockEntity) {
-			CarvedBlockEntity carvedPumpkinBlockEntity = (CarvedBlockEntity) blockEntity;
 
-			double xHitPos = context.getHitPos().getX() - pos.getX();
-			double yHitPos = context.getHitPos().getY() - pos.getY();
-			double zHitPos = context.getHitPos().getZ() - pos.getZ();
+		if (Arrays.stream(CarveMyPumpkin.carvableBlocks).anyMatch(t -> t.equals(world.getBlockState(pos).getBlock()))) {
 
-			if (dir == world.getBlockState(pos).get(CMPCarvedPumpkinBlock.FACING)) {
-				for (int x = 0; x < 16; x++) {
-					for (int y = 0; y < 16; y++) {
-						if (dir == Direction.NORTH) {
-							if ((xHitPos >= x * 0.0625 && xHitPos <= (x + 1) * 0.0625)
-									&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
-								carvedPumpkinBlockEntity.setValue((-x) + 15, y,
-										(byte) (carvedPumpkinBlockEntity.getValue((-x) + 15, y) == 0 ? 1 : 0));
-							}
-						} else if (dir == Direction.EAST) {
-							if ((zHitPos >= x * 0.0625 && zHitPos <= (x + 1) * 0.0625)
-									&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
-								carvedPumpkinBlockEntity.setValue((-x) + 15, y,
-										(byte) (carvedPumpkinBlockEntity.getValue((-x) + 15, y) == 0 ? 1 : 0));
-							}
-						} else if (dir == Direction.SOUTH) {
-							if ((xHitPos >= x * 0.0625 && xHitPos <= (x + 1) * 0.0625)
-									&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
-								carvedPumpkinBlockEntity.setValue(x, y,
-										(byte) (carvedPumpkinBlockEntity.getValue(x, y) == 0 ? 1 : 0));
-							}
-						} else if (dir == Direction.WEST) {
-							if ((zHitPos >= x * 0.0625 && zHitPos <= (x + 1) * 0.0625)
-									&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
-								carvedPumpkinBlockEntity.setValue(x, y,
-										(byte) (carvedPumpkinBlockEntity.getValue(x, y) == 0 ? 1 : 0));
+			if (blockEntity instanceof CarvedBlockEntity) {
+
+				CarvedBlockEntity carvedPumpkinBlockEntity = (CarvedBlockEntity) blockEntity;
+
+				double xHitPos = context.getHitPos().getX() - pos.getX();
+				double yHitPos = context.getHitPos().getY() - pos.getY();
+				double zHitPos = context.getHitPos().getZ() - pos.getZ();
+
+				if (dir == world.getBlockState(pos).get(CarvableBlock.FACING)) {
+					for (int x = 0; x < 16; x++) {
+						for (int y = 0; y < 16; y++) {
+							if (dir == Direction.NORTH) {
+								if ((xHitPos >= x * 0.0625 && xHitPos <= (x + 1) * 0.0625)
+										&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
+									carvedPumpkinBlockEntity.setValue((-x) + 15, y,
+											(byte) (carvedPumpkinBlockEntity.getValue((-x) + 15, y) == 0 ? 1 : 0));
+								}
+							} else if (dir == Direction.EAST) {
+								if ((zHitPos >= x * 0.0625 && zHitPos <= (x + 1) * 0.0625)
+										&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
+									carvedPumpkinBlockEntity.setValue((-x) + 15, y,
+											(byte) (carvedPumpkinBlockEntity.getValue((-x) + 15, y) == 0 ? 1 : 0));
+								}
+							} else if (dir == Direction.SOUTH) {
+								if ((xHitPos >= x * 0.0625 && xHitPos <= (x + 1) * 0.0625)
+										&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
+									carvedPumpkinBlockEntity.setValue(x, y,
+											(byte) (carvedPumpkinBlockEntity.getValue(x, y) == 0 ? 1 : 0));
+								}
+							} else if (dir == Direction.WEST) {
+								if ((zHitPos >= x * 0.0625 && zHitPos <= (x + 1) * 0.0625)
+										&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
+									carvedPumpkinBlockEntity.setValue(x, y,
+											(byte) (carvedPumpkinBlockEntity.getValue(x, y) == 0 ? 1 : 0));
+								}
 							}
 						}
 					}
+					if (context.getPlayer() != null) {
+						context.getStack().damage(1, (LivingEntity) context.getPlayer(),
+								(Consumer<LivingEntity>) ((p) -> {
+									((LivingEntity) p).sendToolBreakStatus(context.getHand());
+								}));
+					}
+					if (carvedPumpkinBlockEntity.isUncarved()) {
+						world.setBlockState(pos, Blocks.PUMPKIN.getDefaultState(), 2);
+					}
+					return ActionResult.SUCCESS;
+				} else {
+					return ActionResult.FAIL;
 				}
-				if (context.getPlayer() != null) {
-					context.getStack().damage(1, (LivingEntity) context.getPlayer(), (Consumer<LivingEntity>) ((p) -> {
-						((LivingEntity) p).sendToolBreakStatus(context.getHand());
-					}));
-				}
-				if (carvedPumpkinBlockEntity.isUncarved()) {
-					world.setBlockState(pos, Blocks.PUMPKIN.getDefaultState(), 2);
+			} else if ((dir != Direction.UP && dir != Direction.DOWN)) {
+				if (block == Blocks.MELON) {
+					world.setBlockState(pos,
+							CarveMyPumpkin.CARVED_MELON.getDefaultState().with(CarvableBlock.FACING, dir), 2);
+					useOnBlock(context);
+				} else if (block == Blocks.PUMPKIN) {
+					world.setBlockState(pos,
+							CarveMyPumpkin.CARVED_PUMPKIN.getDefaultState().with(CarvableBlock.FACING, dir), 2);
+					useOnBlock(context);
 				}
 				return ActionResult.SUCCESS;
 			} else {
 				return ActionResult.FAIL;
 			}
-		} else if (world.getBlockState(pos) == Blocks.PUMPKIN.getDefaultState()
-				&& (dir != Direction.UP && dir != Direction.DOWN)) {
-			world.setBlockState(pos,
-					CarveMyPumpkin.CARVED_PUMPKIN.getDefaultState().with(CMPCarvedPumpkinBlock.FACING, dir), 2);
-			useOnBlock(context);
-			return ActionResult.SUCCESS;
+
 		} else {
 			return ActionResult.FAIL;
 		}

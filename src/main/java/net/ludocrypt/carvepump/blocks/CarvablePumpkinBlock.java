@@ -3,88 +3,44 @@ package net.ludocrypt.carvepump.blocks;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
-import org.eclipse.jdt.annotation.Nullable;
-
-import net.fabricmc.fabric.api.item.v1.EquipmentSlotProvider;
 import net.ludocrypt.carvepump.CarveMyPumpkin;
 import net.ludocrypt.carvepump.blocks.entity.CarvedBlockEntity;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.pattern.BlockPattern;
 import net.minecraft.block.pattern.BlockPatternBuilder;
 import net.minecraft.block.pattern.CachedBlockPosition;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.SnowGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Wearable;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.predicate.block.BlockStatePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.util.function.MaterialPredicate;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-public class CMPCarvedPumpkinBlock extends BlockWithEntity implements EquipmentSlotProvider, Wearable {
+public class CarvablePumpkinBlock extends CarvableBlock {
 
-	public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
-
-	@Nullable
-	private BlockPattern snowGolemDispenserPattern;
-	@Nullable
 	private BlockPattern snowGolemPattern;
-	@Nullable
-	private BlockPattern ironGolemDispenserPattern;
-	@Nullable
 	private BlockPattern ironGolemPattern;
-	private static final Predicate<BlockState> IS_GOLEM_HEAD_PREDICATE = (state) -> {
+
+	private static Predicate<BlockState> IS_GOLEM_HEAD_PREDICATE = (state) -> {
 		return state != null && state.isOf(CarveMyPumpkin.CARVED_PUMPKIN);
 	};
 
-	public CMPCarvedPumpkinBlock() {
-		super(AbstractBlock.Settings.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F)
-				.sounds(BlockSoundGroup.WOOD));
-		this.setDefaultState(
-				(BlockState) ((BlockState) this.stateManager.getDefaultState()).with(FACING, Direction.NORTH));
-	}
-
-	@Override
-	public BlockState getPlacementState(ItemPlacementContext ctx) {
-		return (BlockState) this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
-	}
-
-	@Override
-	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-		builder.add(FACING);
-	}
-
-	@Override
-	public BlockEntity createBlockEntity(BlockView world) {
-		return new CarvedBlockEntity();
-	}
-
-	@Override
-	public BlockRenderType getRenderType(BlockState state) {
-		return BlockRenderType.INVISIBLE;
+	public CarvablePumpkinBlock(AbstractBlock.Settings settings) {
+		super(settings);
 	}
 
 	@Override
@@ -125,22 +81,21 @@ public class CMPCarvedPumpkinBlock extends BlockWithEntity implements EquipmentS
 	}
 
 	@Override
-	public EquipmentSlot getPreferredEquipmentSlot(ItemStack stack) {
-		return EquipmentSlot.HEAD;
-	}
-
-	@Override
 	public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
 		ItemStack itemStack = new ItemStack(CarveMyPumpkin.CARVED_PUMPKIN);
-		CompoundTag compoundTag = ((CarvedBlockEntity) world.getBlockEntity(pos))
-				.serializeCarving(new CompoundTag());
+		CompoundTag compoundTag = ((CarvedBlockEntity) world.getBlockEntity(pos)).serializeCarving(new CompoundTag());
 		if (!compoundTag.isEmpty()) {
 			itemStack.putSubTag("BlockEntityTag", compoundTag);
 		}
 		return itemStack;
 	}
 
-	// Just Pumpkin Stuff
+	@Override
+	public Block getCarvingBlock() {
+		return Blocks.PUMPKIN;
+	}
+
+	// Pumpkin Spawning
 
 	@Override
 	public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {

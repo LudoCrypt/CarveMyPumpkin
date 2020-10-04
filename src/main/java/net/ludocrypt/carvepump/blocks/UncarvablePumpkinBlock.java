@@ -3,20 +3,14 @@ package net.ludocrypt.carvepump.blocks;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
-import org.eclipse.jdt.annotation.Nullable;
-
 import net.ludocrypt.carvepump.CarveMyPumpkin;
-import net.ludocrypt.carvepump.blocks.entity.LitCarvedBlockEntity;
+import net.ludocrypt.carvepump.blocks.entity.CarvedBlockEntity;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.pattern.BlockPattern;
 import net.minecraft.block.pattern.BlockPatternBuilder;
@@ -27,94 +21,43 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.SnowGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.predicate.block.BlockStatePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.util.function.MaterialPredicate;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-public class CMPJackOLanternBlock extends BlockWithEntity {
+public class UncarvablePumpkinBlock extends UncarvableBlock {
 
-	public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
-
-	@Nullable
-	private BlockPattern snowGolemDispenserPattern;
-	@Nullable
 	private BlockPattern snowGolemPattern;
-	@Nullable
-	private BlockPattern ironGolemDispenserPattern;
-	@Nullable
 	private BlockPattern ironGolemPattern;
-	private static final Predicate<BlockState> IS_GOLEM_HEAD_PREDICATE = (state) -> {
+
+	private static Predicate<BlockState> IS_GOLEM_HEAD_PREDICATE = (state) -> {
 		return state != null && state.isOf(CarveMyPumpkin.JACK_O_LANTERN);
 	};
 
-	public CMPJackOLanternBlock() {
-		super(AbstractBlock.Settings.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F)
-				.sounds(BlockSoundGroup.WOOD).luminance((state) -> {
-					return 15;
-				}));
-		this.setDefaultState(
-				(BlockState) ((BlockState) this.stateManager.getDefaultState()).with(FACING, Direction.NORTH));
-	}
-
-	@Override
-	public BlockState getPlacementState(ItemPlacementContext ctx) {
-		return (BlockState) this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
-	}
-
-	@Override
-	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-		builder.add(FACING);
-	}
-
-	@Override
-	public BlockEntity createBlockEntity(BlockView world) {
-		return new LitCarvedBlockEntity();
-	}
-
-	@Override
-	public BlockRenderType getRenderType(BlockState state) {
-		return BlockRenderType.INVISIBLE;
+	public UncarvablePumpkinBlock(AbstractBlock.Settings settings) {
+		super(settings);
 	}
 
 	@Override
 	public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
 		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity instanceof LitCarvedBlockEntity) {
-			LitCarvedBlockEntity jackOLanternBlockEntity = (LitCarvedBlockEntity) blockEntity;
-			if (!world.isClient && !jackOLanternBlockEntity.isUncarved()) {
-
-				ItemStack jack_o_lantern = new ItemStack(
-						!player.isCreative() ? CarveMyPumpkin.CARVED_PUMPKIN : CarveMyPumpkin.JACK_O_LANTERN);
-
-				CompoundTag compoundTag = jackOLanternBlockEntity.serializeCarving(new CompoundTag());
-
+		if (blockEntity instanceof CarvedBlockEntity) {
+			CarvedBlockEntity carvedPumpkinBlockEntity = (CarvedBlockEntity) blockEntity;
+			if (!world.isClient && !carvedPumpkinBlockEntity.isUncarved()) {
+				ItemStack itemStack = new ItemStack(CarveMyPumpkin.JACK_O_LANTERN);
+				CompoundTag compoundTag = carvedPumpkinBlockEntity.serializeCarving(new CompoundTag());
 				if (!compoundTag.isEmpty()) {
-					jack_o_lantern.putSubTag("BlockEntityTag", compoundTag);
+					itemStack.putSubTag("BlockEntityTag", compoundTag);
 				}
-
-				ItemEntity jack_o_lantern_entity = new ItemEntity(world, (double) pos.getX() + 0.5D,
-						(double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, jack_o_lantern);
-				jack_o_lantern_entity.setToDefaultPickupDelay();
-				world.spawnEntity(jack_o_lantern_entity);
-
-				if (!player.isCreative()) {
-					ItemStack torch = new ItemStack(Items.TORCH);
-					ItemEntity torch_entity = new ItemEntity(world, (double) pos.getX() + 0.5D,
-							(double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, torch);
-					torch_entity.setToDefaultPickupDelay();
-					world.spawnEntity(torch_entity);
-				}
+				ItemEntity itemEntity = new ItemEntity(world, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D,
+						(double) pos.getZ() + 0.5D, itemStack);
+				itemEntity.setToDefaultPickupDelay();
+				world.spawnEntity(itemEntity);
 			}
 		}
 		super.onBreak(world, pos, state, player);
@@ -124,31 +67,35 @@ public class CMPJackOLanternBlock extends BlockWithEntity {
 	public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
 		super.onPlaced(world, pos, state, placer, itemStack);
 		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity instanceof LitCarvedBlockEntity) {
-			LitCarvedBlockEntity jackOLanternBlockEntity = (LitCarvedBlockEntity) blockEntity;
+		if (blockEntity instanceof CarvedBlockEntity) {
+			CarvedBlockEntity carvedPumpkinBlockEntity = (CarvedBlockEntity) blockEntity;
 			if (itemStack.hasTag()) {
-				jackOLanternBlockEntity.deserializeCarving(itemStack.getSubTag("BlockEntityTag"));
+				carvedPumpkinBlockEntity.deserializeCarving(itemStack.getSubTag("BlockEntityTag"));
 			}
 		}
 	}
 
 	@Override
 	public String getTranslationKey() {
-		return Blocks.JACK_O_LANTERN.getTranslationKey();
+		return Blocks.CARVED_PUMPKIN.getTranslationKey();
 	}
 
 	@Override
 	public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
 		ItemStack itemStack = new ItemStack(CarveMyPumpkin.JACK_O_LANTERN);
-		CompoundTag compoundTag = ((LitCarvedBlockEntity) world.getBlockEntity(pos))
-				.serializeCarving(new CompoundTag());
+		CompoundTag compoundTag = ((CarvedBlockEntity) world.getBlockEntity(pos)).serializeCarving(new CompoundTag());
 		if (!compoundTag.isEmpty()) {
 			itemStack.putSubTag("BlockEntityTag", compoundTag);
 		}
 		return itemStack;
 	}
 
-	// Just Pumpkin Stuff
+	@Override
+	public Block getCarvingBlock() {
+		return Blocks.PUMPKIN;
+	}
+
+	// Pumpkin Spawning
 
 	@Override
 	public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {

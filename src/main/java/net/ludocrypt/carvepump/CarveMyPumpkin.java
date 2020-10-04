@@ -1,17 +1,18 @@
 package net.ludocrypt.carvepump;
 
-import java.util.function.Consumer;
-import java.util.function.Supplier;
-
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.ludocrypt.carvepump.blocks.CMPCarvedPumpkinBlock;
-import net.ludocrypt.carvepump.blocks.CMPJackOLanternBlock;
+import net.ludocrypt.carvepump.blocks.CarvableMelonBlock;
+import net.ludocrypt.carvepump.blocks.CarvablePumpkinBlock;
+import net.ludocrypt.carvepump.blocks.UncarvableMelonBlock;
+import net.ludocrypt.carvepump.blocks.UncarvablePumpkinBlock;
 import net.ludocrypt.carvepump.blocks.entity.CarvedBlockEntity;
-import net.ludocrypt.carvepump.blocks.entity.LitCarvedBlockEntity;
 import net.ludocrypt.carvepump.items.CarverItem;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.Material;
+import net.minecraft.block.MaterialColor;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.BufferBuilder;
@@ -21,16 +22,30 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterials;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class CarveMyPumpkin implements ModInitializer {
 
-	public static final Block CARVED_PUMPKIN = new CMPCarvedPumpkinBlock();
-	public static final Block JACK_O_LANTERN = new CMPJackOLanternBlock();
+	public static BlockEntityType<CarvedBlockEntity> CARVED_BLOCK_ENTITY;
+
+	public static final Block CARVED_PUMPKIN = new CarvablePumpkinBlock(AbstractBlock.Settings
+			.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD));
+	public static final Block JACK_O_LANTERN = new UncarvablePumpkinBlock(AbstractBlock.Settings
+			.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD).luminance((state) -> {
+				return 15;
+			}));
+
+	public static final Block CARVED_MELON = new CarvableMelonBlock(AbstractBlock.Settings
+			.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD));
+	public static final Block JACK_O_MELON = new UncarvableMelonBlock(AbstractBlock.Settings
+			.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD).luminance((state) -> {
+				return 15;
+			}));
+
 	public static final ToolItem WOODEN_CARVER = new CarverItem(ToolMaterials.WOOD, 3, 1,
 			new Item.Settings().group(ItemGroup.TOOLS).maxCount(1));
 	public static final ToolItem STONE_CARVER = new CarverItem(ToolMaterials.STONE, 4, 1,
@@ -44,8 +59,17 @@ public class CarveMyPumpkin implements ModInitializer {
 	public static final ToolItem NETHERITE_CARVER = new CarverItem(ToolMaterials.NETHERITE, 7, 1,
 			new Item.Settings().group(ItemGroup.TOOLS).maxCount(1));
 
+	// List of carvable blocks
+	public static final Block[] carvableBlocks = { CARVED_PUMPKIN, JACK_O_LANTERN, CARVED_MELON, JACK_O_MELON,
+			Blocks.PUMPKIN, Blocks.MELON };
+	// Not to be confused with the list of blockEntity carvable Blocks
+	public static final Block[] carvedBlocksList = { CARVED_PUMPKIN, JACK_O_LANTERN, CARVED_MELON, JACK_O_MELON };
+
 	@Override
 	public void onInitialize() {
+
+		CARVED_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, id("carved_block_entity_type"),
+				BlockEntityType.Builder.create(CarvedBlockEntity::new, carvedBlocksList).build(null));
 
 		Registry.register(Registry.ITEM, id("wooden_carver"), WOODEN_CARVER);
 		Registry.register(Registry.ITEM, id("stone_carver"), STONE_CARVER);
@@ -54,11 +78,20 @@ public class CarveMyPumpkin implements ModInitializer {
 		Registry.register(Registry.ITEM, id("diamond_carver"), DIAMOND_CARVER);
 		Registry.register(Registry.ITEM, id("netherite_carver"), NETHERITE_CARVER);
 
-		registerBlockEntity("carved_pumpkin", CARVED_PUMPKIN, CarvedBlockEntity::new,
-				(blockEntityType) -> CarvedBlockEntity.blockEntityType = blockEntityType, true);
+		Registry.register(Registry.BLOCK, id("carved_pumpkin"), CARVED_PUMPKIN);
+		Registry.register(Registry.BLOCK, id("jack_o_lantern"), JACK_O_LANTERN);
+		Registry.register(Registry.BLOCK, id("carved_melon"), CARVED_MELON);
+		Registry.register(Registry.BLOCK, id("jack_o_melon"), JACK_O_MELON);
 
-		registerBlockEntity("jack_o_lantern", JACK_O_LANTERN, LitCarvedBlockEntity::new,
-				(blockEntityType) -> LitCarvedBlockEntity.blockEntityType = blockEntityType, false);
+		Registry.register(Registry.ITEM, id("carved_pumpkin"),
+				new BlockItem(CARVED_PUMPKIN, new FabricItemSettings().equipmentSlot(stack -> EquipmentSlot.HEAD)));
+
+		Registry.register(Registry.ITEM, id("jack_o_lantern"), new BlockItem(JACK_O_LANTERN, new FabricItemSettings()));
+
+		Registry.register(Registry.ITEM, id("carved_melon"),
+				new BlockItem(CARVED_MELON, new FabricItemSettings().equipmentSlot(stack -> EquipmentSlot.HEAD)));
+
+		Registry.register(Registry.ITEM, id("jack_o_melon"), new BlockItem(JACK_O_MELON, new FabricItemSettings()));
 
 	}
 
@@ -66,27 +99,7 @@ public class CarveMyPumpkin implements ModInitializer {
 		return new Identifier("carvepump", id);
 	}
 
-	private <T extends BlockEntity> ItemStack registerBlockEntity(String identifier, Block block,
-			Supplier<? extends T> blockEntitySupplier,
-			@SuppressWarnings("rawtypes") Consumer<BlockEntityType> blockEntityConsumer, boolean wearable) {
-
-		Registry.register(Registry.BLOCK, id(identifier), block);
-
-		BlockEntityType<?> blockEntityType = Registry.register(Registry.BLOCK_ENTITY_TYPE, id(identifier),
-				BlockEntityType.Builder.create(blockEntitySupplier, block).build(null));
-
-		blockEntityConsumer.accept(blockEntityType);
-
-		BlockItem blockItem = new BlockItem(block,
-				wearable ? new FabricItemSettings().equipmentSlot(stack -> EquipmentSlot.HEAD)
-						: new FabricItemSettings());
-
-		Registry.register(Registry.ITEM, id(identifier), blockItem);
-
-		return new ItemStack(blockItem);
-	}
-
-	public static void renderPumpkinSquare(MinecraftClient client, double scaledWidth, double scaledHeight, double x,
+	public static void renderBlurSquare(MinecraftClient client, double scaledWidth, double scaledHeight, double x,
 			double y, Identifier id) {
 
 		client.getTextureManager().bindTexture(id);

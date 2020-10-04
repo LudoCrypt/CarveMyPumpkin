@@ -2,15 +2,13 @@ package net.ludocrypt.carvepump.blocks.entity;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.ludocrypt.carvepump.CarveMyPumpkin;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 
 public class CarvedBlockEntity extends BlockEntity {
-
-	public static BlockEntityType<?> blockEntityType;
 
 	public byte[] pixelsCarved1 = new byte[16];
 	public byte[] pixelsCarved2 = new byte[16];
@@ -30,13 +28,7 @@ public class CarvedBlockEntity extends BlockEntity {
 	public byte[] pixelsCarved16 = new byte[16];
 
 	public CarvedBlockEntity() {
-		super(blockEntityType);
-		for (int x = 0; x > 16; x++) {
-			for (int y = 0; y > 16; y++) {
-				setValue(x, y, (byte) 0);
-			}
-		}
-
+		super(CarveMyPumpkin.CARVED_BLOCK_ENTITY);
 	}
 
 	public void setValue(int x, int y, byte newValue) {
