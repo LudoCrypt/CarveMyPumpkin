@@ -53,7 +53,7 @@ public class CarverItem extends MiningToolItem {
 
 		if (Arrays.stream(CarveMyPumpkin.carvableBlocks).anyMatch(t -> t.equals(world.getBlockState(pos).getBlock()))) {
 
-			if (blockEntity instanceof CarvedBlockEntity) {
+			if (blockEntity instanceof CarvedBlockEntity && block instanceof CarvableBlock) {
 
 				CarvedBlockEntity carvedPumpkinBlockEntity = (CarvedBlockEntity) blockEntity;
 
@@ -109,12 +109,16 @@ public class CarverItem extends MiningToolItem {
 					world.setBlockState(pos,
 							CarveMyPumpkin.CARVED_MELON.getDefaultState().with(CarvableBlock.FACING, dir), 2);
 					useOnBlock(context);
+					return ActionResult.SUCCESS;
 				} else if (block == Blocks.PUMPKIN) {
 					world.setBlockState(pos,
 							CarveMyPumpkin.CARVED_PUMPKIN.getDefaultState().with(CarvableBlock.FACING, dir), 2);
 					useOnBlock(context);
+					return ActionResult.SUCCESS;
+				} else {
+					return ActionResult.FAIL;
 				}
-				return ActionResult.SUCCESS;
+
 			} else {
 				return ActionResult.FAIL;
 			}
