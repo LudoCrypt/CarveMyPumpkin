@@ -22,6 +22,7 @@ import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.SnowGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.predicate.block.BlockStatePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -49,15 +50,33 @@ public class UncarvablePumpkinBlock extends UncarvableBlock {
 		if (blockEntity instanceof CarvedBlockEntity) {
 			CarvedBlockEntity carvedPumpkinBlockEntity = (CarvedBlockEntity) blockEntity;
 			if (!world.isClient && !carvedPumpkinBlockEntity.isUncarved()) {
-				ItemStack itemStack = new ItemStack(CarveMyPumpkin.JACK_O_LANTERN);
-				CompoundTag compoundTag = carvedPumpkinBlockEntity.serializeCarving(new CompoundTag());
-				if (!compoundTag.isEmpty()) {
-					itemStack.putSubTag("BlockEntityTag", compoundTag);
+				if (player.isCreative()) {
+					ItemStack itemStack = new ItemStack(CarveMyPumpkin.JACK_O_LANTERN);
+					CompoundTag compoundTag = carvedPumpkinBlockEntity.serializeCarving(new CompoundTag());
+					if (!compoundTag.isEmpty()) {
+						itemStack.putSubTag("BlockEntityTag", compoundTag);
+					}
+					ItemEntity itemEntity = new ItemEntity(world, (double) pos.getX() + 0.5D,
+							(double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, itemStack);
+					itemEntity.setToDefaultPickupDelay();
+					world.spawnEntity(itemEntity);
+				} else {
+					ItemStack itemStack = new ItemStack(CarveMyPumpkin.CARVED_PUMPKIN);
+					CompoundTag compoundTag = carvedPumpkinBlockEntity.serializeCarving(new CompoundTag());
+					if (!compoundTag.isEmpty()) {
+						itemStack.putSubTag("BlockEntityTag", compoundTag);
+					}
+					ItemEntity itemEntity = new ItemEntity(world, (double) pos.getX() + 0.5D,
+							(double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, itemStack);
+					itemEntity.setToDefaultPickupDelay();
+					world.spawnEntity(itemEntity);
+
+					ItemStack torch = new ItemStack(Items.TORCH);
+					ItemEntity torchEntity = new ItemEntity(world, (double) pos.getX() + 0.5D,
+							(double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, torch);
+					torchEntity.setToDefaultPickupDelay();
+					world.spawnEntity(torchEntity);
 				}
-				ItemEntity itemEntity = new ItemEntity(world, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D,
-						(double) pos.getZ() + 0.5D, itemStack);
-				itemEntity.setToDefaultPickupDelay();
-				world.spawnEntity(itemEntity);
 			}
 		}
 		super.onBreak(world, pos, state, player);
