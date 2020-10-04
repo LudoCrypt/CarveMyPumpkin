@@ -3,15 +3,16 @@
 	"id": "carvepump",
 	"version": "${version}",
 	"name": "Carve My Pumpkin",
-	"description": "Design any face on a pumpkin!",
+	"description": "Carve any face on a pumpkin!",
 	"authors": [
 		"LudoCrypt"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/carve-my-pumpkin",
+		"sources": "https://github.com/LudoCrypt/CarveMyPumpkin",
+		"issues": "https://github.com/LudoCrypt/CarveMyPumpkin/issues"
 	},
-	"license": "CC0-1.0",
+	"license": "LGPL-3.0 License",
 	"icon": "assets/carvepump/icon.png",
 	"environment": "*",
 	"entrypoints": {
