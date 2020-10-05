@@ -53,7 +53,8 @@ public class CarverItem extends MiningToolItem {
 
 		if (Arrays.stream(CarveMyPumpkin.carvableBlocks).anyMatch(t -> t.equals(world.getBlockState(pos).getBlock()))) {
 
-			if (blockEntity instanceof CarvedBlockEntity && block instanceof CarvableBlock) {
+			if ((blockEntity instanceof CarvedBlockEntity && block instanceof CarvableBlock)
+					&& ((CarvableBlock) block).carvable) {
 
 				CarvedBlockEntity carvedPumpkinBlockEntity = (CarvedBlockEntity) blockEntity;
 

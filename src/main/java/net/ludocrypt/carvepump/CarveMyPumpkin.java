@@ -2,10 +2,7 @@ package net.ludocrypt.carvepump;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.ludocrypt.carvepump.blocks.CarvableMelonBlock;
-import net.ludocrypt.carvepump.blocks.CarvablePumpkinBlock;
-import net.ludocrypt.carvepump.blocks.UncarvableMelonBlock;
-import net.ludocrypt.carvepump.blocks.UncarvablePumpkinBlock;
+import net.ludocrypt.carvepump.blocks.CarvableBlock;
 import net.ludocrypt.carvepump.blocks.entity.CarvedBlockEntity;
 import net.ludocrypt.carvepump.items.CarverItem;
 import net.minecraft.block.AbstractBlock;
@@ -32,31 +29,32 @@ public class CarveMyPumpkin implements ModInitializer {
 
 	public static BlockEntityType<CarvedBlockEntity> CARVED_BLOCK_ENTITY;
 
-	public static final Block CARVED_PUMPKIN = new CarvablePumpkinBlock(AbstractBlock.Settings
-			.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD));
-	public static final Block JACK_O_LANTERN = new UncarvablePumpkinBlock(AbstractBlock.Settings
+	public static final Block CARVED_PUMPKIN = new CarvableBlock(
+			AbstractBlock.Settings.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD),
+			Blocks.PUMPKIN, new Identifier("carvepump", "textures/entity/pumpkin_halo_colors.png"), true);
+	public static final Block JACK_O_LANTERN = new CarvableBlock(AbstractBlock.Settings
 			.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD).luminance((state) -> {
 				return 15;
-			}));
-
-	public static final Block CARVED_MELON = new CarvableMelonBlock(AbstractBlock.Settings
-			.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD));
-	public static final Block JACK_O_MELON = new UncarvableMelonBlock(AbstractBlock.Settings
+			}), Blocks.PUMPKIN, new Identifier("carvepump", "textures/entity/jack_o_lantern_halo_colors.png"), false);
+	public static final Block CARVED_MELON = new CarvableBlock(
+			AbstractBlock.Settings.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD),
+			Blocks.MELON, new Identifier("carvepump", "textures/entity/melon_halo_colors.png"), true);
+	public static final Block JACK_O_MELON = new CarvableBlock(AbstractBlock.Settings
 			.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD).luminance((state) -> {
 				return 15;
-			}));
+			}), Blocks.MELON, new Identifier("carvepump", "textures/entity/jack_o_melon_halo_colors.png"), false);
 
-	public static final ToolItem WOODEN_CARVER = new CarverItem(ToolMaterials.WOOD, 3, 1,
+	public static final ToolItem WOODEN_CARVER = new CarverItem(ToolMaterials.WOOD, 2, 1,
 			new Item.Settings().group(ItemGroup.TOOLS).maxCount(1));
-	public static final ToolItem STONE_CARVER = new CarverItem(ToolMaterials.STONE, 4, 1,
+	public static final ToolItem STONE_CARVER = new CarverItem(ToolMaterials.STONE, 2, 1,
 			new Item.Settings().group(ItemGroup.TOOLS).maxCount(1));
-	public static final ToolItem GOLD_CARVER = new CarverItem(ToolMaterials.GOLD, 3, 1,
+	public static final ToolItem GOLD_CARVER = new CarverItem(ToolMaterials.GOLD, 2, 1,
 			new Item.Settings().group(ItemGroup.TOOLS).maxCount(1));
-	public static final ToolItem IRON_CARVER = new CarverItem(ToolMaterials.IRON, 5, 1,
+	public static final ToolItem IRON_CARVER = new CarverItem(ToolMaterials.IRON, 2, 1,
 			new Item.Settings().group(ItemGroup.TOOLS).maxCount(1));
-	public static final ToolItem DIAMOND_CARVER = new CarverItem(ToolMaterials.DIAMOND, 6, 1,
+	public static final ToolItem DIAMOND_CARVER = new CarverItem(ToolMaterials.DIAMOND, 2, 1,
 			new Item.Settings().group(ItemGroup.TOOLS).maxCount(1));
-	public static final ToolItem NETHERITE_CARVER = new CarverItem(ToolMaterials.NETHERITE, 7, 1,
+	public static final ToolItem NETHERITE_CARVER = new CarverItem(ToolMaterials.NETHERITE, 2, 1,
 			new Item.Settings().group(ItemGroup.TOOLS).maxCount(1));
 
 	// List of carvable blocks
@@ -86,12 +84,14 @@ public class CarveMyPumpkin implements ModInitializer {
 		Registry.register(Registry.ITEM, id("carved_pumpkin"),
 				new BlockItem(CARVED_PUMPKIN, new FabricItemSettings().equipmentSlot(stack -> EquipmentSlot.HEAD)));
 
-		Registry.register(Registry.ITEM, id("jack_o_lantern"), new BlockItem(JACK_O_LANTERN, new FabricItemSettings()));
+		Registry.register(Registry.ITEM, id("jack_o_lantern"),
+				new BlockItem(JACK_O_LANTERN, new FabricItemSettings().recipeRemainder(Blocks.PUMPKIN.asItem())));
 
 		Registry.register(Registry.ITEM, id("carved_melon"),
 				new BlockItem(CARVED_MELON, new FabricItemSettings().equipmentSlot(stack -> EquipmentSlot.HEAD)));
 
-		Registry.register(Registry.ITEM, id("jack_o_melon"), new BlockItem(JACK_O_MELON, new FabricItemSettings()));
+		Registry.register(Registry.ITEM, id("jack_o_melon"),
+				new BlockItem(JACK_O_MELON, new FabricItemSettings().recipeRemainder(Blocks.MELON.asItem())));
 
 	}
 

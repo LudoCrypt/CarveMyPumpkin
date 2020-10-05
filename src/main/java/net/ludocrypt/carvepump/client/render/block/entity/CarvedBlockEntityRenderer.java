@@ -3,7 +3,6 @@ package net.ludocrypt.carvepump.client.render.block.entity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.ludocrypt.carvepump.blocks.CarvableBlock;
-import net.ludocrypt.carvepump.blocks.UncarvableBlock;
 import net.ludocrypt.carvepump.blocks.entity.CarvedBlockEntity;
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
@@ -37,33 +36,19 @@ public class CarvedBlockEntityRenderer extends BlockEntityRenderer<CarvedBlockEn
 			VertexConsumerProvider vertexConsumerProvider, int i, int j) {
 
 		Block block = carvedBlockEntity.getWorld().getBlockState(carvedBlockEntity.getPos()).getBlock();
-
-		matrixStack.push();
-		matrixStack.translate(0.5, 0.5, 0.5);
-
-		int lightAbove = WorldRenderer.getLightmapCoordinates(carvedBlockEntity.getWorld(),
-				carvedBlockEntity.getPos().up());
 		if (block instanceof CarvableBlock) {
+			matrixStack.push();
+			matrixStack.translate(0.5, 0.5, 0.5);
+			int lightAbove = WorldRenderer.getLightmapCoordinates(carvedBlockEntity.getWorld(),
+					carvedBlockEntity.getPos().up());
 			MinecraftClient.getInstance().getItemRenderer().renderItem(
 					new ItemStack(((CarvableBlock) block).getCarvingBlock()), ModelTransformation.Mode.NONE, lightAbove,
 					OverlayTexture.DEFAULT_UV, matrixStack, vertexConsumerProvider);
-
 			matrixStack.translate(-0.5, -0.5, -0.5);
-
 			renderFace(carvedBlockEntity, ((CarvableBlock) block).getRenderId(), matrixStack, vertexConsumerProvider,
 					lightAbove, OverlayTexture.DEFAULT_UV);
-		} else if (block instanceof UncarvableBlock) {
-			MinecraftClient.getInstance().getItemRenderer().renderItem(
-					new ItemStack(((UncarvableBlock) block).getCarvingBlock()), ModelTransformation.Mode.NONE,
-					lightAbove, OverlayTexture.DEFAULT_UV, matrixStack, vertexConsumerProvider);
-
-			matrixStack.translate(-0.5, -0.5, -0.5);
-
-			renderFace(carvedBlockEntity, ((UncarvableBlock) block).getRenderId(), matrixStack, vertexConsumerProvider,
-					lightAbove, OverlayTexture.DEFAULT_UV);
+			matrixStack.pop();
 		}
-
-		matrixStack.pop();
 
 	}
 
@@ -133,7 +118,6 @@ public class CarvedBlockEntityRenderer extends BlockEntityRenderer<CarvedBlockEn
 			VertexConsumerProvider vertexConsumerProvider, int i, int j) {
 		if (stack.getItem() instanceof BlockItem) {
 			Block block = ((BlockItem) stack.getItem()).getBlock();
-
 			if (block instanceof CarvableBlock) {
 				CarvableBlock carvableBlock = ((CarvableBlock) block);
 				ItemStack carvedBlockStack = new ItemStack(carvableBlock.getCarvingBlock());
@@ -146,71 +130,49 @@ public class CarvedBlockEntityRenderer extends BlockEntityRenderer<CarvedBlockEn
 						vertexConsumerProvider, i, j, model);
 				matrixStack.translate(-0.5, -0.5, -0.5);
 				matrixStack.pop();
-			} else if (block instanceof UncarvableBlock) {
-				UncarvableBlock uncarvableBlock = ((UncarvableBlock) block);
-				ItemStack carvedBlockStack = new ItemStack(uncarvableBlock.getCarvingBlock());
-				matrixStack.push();
-				BakedModel model = client.getBakedModelManager()
-						.getModel(new ModelIdentifier(uncarvableBlock.getCarvingBlock().toString().substring(15,
-								uncarvableBlock.getCarvingBlock().toString().length() - 1)));
-				matrixStack.translate(0.5, 0.5, 0.5);
-				client.getItemRenderer().renderItem(carvedBlockStack, ModelTransformation.Mode.HEAD, false, matrixStack,
-						vertexConsumerProvider, i, j, model);
-				matrixStack.translate(-0.5, -0.5, -0.5);
-				matrixStack.pop();
-			}
-			if (stack.hasTag()) {
-				if (stack.getSubTag("BlockEntityTag") != null) {
-					byte[][] carving = CarvedBlockEntity.getCarvingFromStack(stack);
-					Direction dir;
-					switch (mode) {
-					case NONE:
-						dir = Direction.NORTH;
-						break;
-					case THIRD_PERSON_LEFT_HAND:
-						dir = Direction.EAST;
-						break;
-					case THIRD_PERSON_RIGHT_HAND:
-						dir = Direction.WEST;
-						break;
-					case FIRST_PERSON_LEFT_HAND:
-						dir = Direction.SOUTH;
-						break;
-					case FIRST_PERSON_RIGHT_HAND:
-						dir = Direction.SOUTH;
-						break;
-					case HEAD:
-						dir = Direction.SOUTH;
-						break;
-					case GUI:
-						dir = Direction.SOUTH;
-						break;
-					case GROUND:
-						dir = Direction.NORTH;
-						break;
-					case FIXED:
-						dir = Direction.SOUTH;
-						break;
-					default:
-						dir = Direction.NORTH;
-						break;
-					}
-					if (block instanceof CarvableBlock) {
+				if (stack.hasTag()) {
+					if (stack.getSubTag("BlockEntityTag") != null) {
+						byte[][] carving = CarvedBlockEntity.getCarvingFromStack(stack);
+						Direction dir;
+						switch (mode) {
+						case NONE:
+							dir = Direction.NORTH;
+							break;
+						case THIRD_PERSON_LEFT_HAND:
+							dir = Direction.EAST;
+							break;
+						case THIRD_PERSON_RIGHT_HAND:
+							dir = Direction.WEST;
+							break;
+						case FIRST_PERSON_LEFT_HAND:
+							dir = Direction.SOUTH;
+							break;
+						case FIRST_PERSON_RIGHT_HAND:
+							dir = Direction.SOUTH;
+							break;
+						case HEAD:
+							dir = Direction.SOUTH;
+							break;
+						case GUI:
+							dir = Direction.SOUTH;
+							break;
+						case GROUND:
+							dir = Direction.NORTH;
+							break;
+						case FIXED:
+							dir = Direction.SOUTH;
+							break;
+						default:
+							dir = Direction.NORTH;
+							break;
+						}
 						for (int x = 0; x < 16; x++) {
 							for (int y = 0; y < 16; y++) {
 								renderModel(x, y, carving, ((CarvableBlock) block).getRenderId(), dir, matrixStack,
 										vertexConsumerProvider, i, j);
 							}
 						}
-					} else if (block instanceof UncarvableBlock) {
-						for (int x = 0; x < 16; x++) {
-							for (int y = 0; y < 16; y++) {
-								renderModel(x, y, carving, ((UncarvableBlock) block).getRenderId(), dir, matrixStack,
-										vertexConsumerProvider, i, j);
-							}
-						}
 					}
-
 				}
 			}
 		}

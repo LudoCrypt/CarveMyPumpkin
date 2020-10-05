@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "carvepump:jack_o_lantern"
+		}
+	],
+	"result": {
+		"item": "minecraft:torch",
+		"count": 1
+	}
+}
