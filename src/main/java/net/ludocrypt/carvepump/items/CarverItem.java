@@ -98,7 +98,7 @@ public class CarverItem extends MiningToolItem {
 								}));
 					}
 					if (carvedPumpkinBlockEntity.isUncarved()) {
-						world.setBlockState(pos, Blocks.PUMPKIN.getDefaultState(), 2);
+						world.setBlockState(pos, ((CarvableBlock) block).getCarvingBlock().getDefaultState(), 2);
 					}
 					return ActionResult.SUCCESS;
 				} else {

@@ -12,6 +12,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 
@@ -47,6 +48,10 @@ public class CarvableBlock extends BlockWithEntity {
 
 	public Block getCarvingBlock() {
 		return Blocks.PUMPKIN;
+	}
+
+	public Identifier getRenderId() {
+		return new Identifier("carvepump", "textures/entity/pumpkin_halo_colors.png");
 	}
 
 }

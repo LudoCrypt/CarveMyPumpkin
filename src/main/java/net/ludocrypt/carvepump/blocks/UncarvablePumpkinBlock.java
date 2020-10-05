@@ -26,6 +26,7 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.predicate.block.BlockStatePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.function.MaterialPredicate;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
@@ -112,6 +113,11 @@ public class UncarvablePumpkinBlock extends UncarvableBlock {
 	@Override
 	public Block getCarvingBlock() {
 		return Blocks.PUMPKIN;
+	}
+
+	@Override
+	public Identifier getRenderId() {
+		return new Identifier("carvepump", "textures/entity/jack_o_lantern_halo_colors.png");
 	}
 
 	// Pumpkin Spawning

@@ -2,7 +2,6 @@ package net.ludocrypt.carvepump.client.render.block.entity;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.ludocrypt.carvepump.CarveMyPumpkin;
 import net.ludocrypt.carvepump.blocks.CarvableBlock;
 import net.ludocrypt.carvepump.blocks.UncarvableBlock;
 import net.ludocrypt.carvepump.blocks.entity.CarvedBlockEntity;
@@ -26,13 +25,8 @@ import net.minecraft.util.math.Direction;
 
 @Environment(EnvType.CLIENT)
 public class CarvedBlockEntityRenderer extends BlockEntityRenderer<CarvedBlockEntity> {
+
 	private static final MinecraftClient client = MinecraftClient.getInstance();
-	public static Identifier PUMPKIN_HALO = new Identifier("carvepump", "textures/entity/pumpkin_halo_colors.png");
-	public static Identifier JACK_O_LANTERN_HALO = new Identifier("carvepump",
-			"textures/entity/jack_o_lantern_halo_colors.png");
-	public static Identifier MELON_HALO = new Identifier("carvepump", "textures/entity/melon_halo_colors.png");
-	public static Identifier JACK_O_MELON_HALO = new Identifier("carvepump",
-			"textures/entity/jack_o_melon_halo_colors.png");
 
 	public CarvedBlockEntityRenderer(BlockEntityRenderDispatcher blockEntityRenderDispatcher) {
 		super(blockEntityRenderDispatcher);
@@ -53,26 +47,20 @@ public class CarvedBlockEntityRenderer extends BlockEntityRenderer<CarvedBlockEn
 			MinecraftClient.getInstance().getItemRenderer().renderItem(
 					new ItemStack(((CarvableBlock) block).getCarvingBlock()), ModelTransformation.Mode.NONE, lightAbove,
 					OverlayTexture.DEFAULT_UV, matrixStack, vertexConsumerProvider);
+
+			matrixStack.translate(-0.5, -0.5, -0.5);
+
+			renderFace(carvedBlockEntity, ((CarvableBlock) block).getRenderId(), matrixStack, vertexConsumerProvider,
+					lightAbove, OverlayTexture.DEFAULT_UV);
 		} else if (block instanceof UncarvableBlock) {
 			MinecraftClient.getInstance().getItemRenderer().renderItem(
 					new ItemStack(((UncarvableBlock) block).getCarvingBlock()), ModelTransformation.Mode.NONE,
 					lightAbove, OverlayTexture.DEFAULT_UV, matrixStack, vertexConsumerProvider);
-		}
 
-		matrixStack.translate(-0.5, -0.5, -0.5);
+			matrixStack.translate(-0.5, -0.5, -0.5);
 
-		if (block == CarveMyPumpkin.CARVED_PUMPKIN) {
-			renderFace(carvedBlockEntity, PUMPKIN_HALO, matrixStack, vertexConsumerProvider, lightAbove,
-					OverlayTexture.DEFAULT_UV);
-		} else if (block == CarveMyPumpkin.JACK_O_LANTERN) {
-			renderFace(carvedBlockEntity, JACK_O_LANTERN_HALO, matrixStack, vertexConsumerProvider, lightAbove,
-					OverlayTexture.DEFAULT_UV);
-		} else if (block == CarveMyPumpkin.CARVED_MELON) {
-			renderFace(carvedBlockEntity, MELON_HALO, matrixStack, vertexConsumerProvider, lightAbove,
-					OverlayTexture.DEFAULT_UV);
-		} else if (block == CarveMyPumpkin.JACK_O_MELON) {
-			renderFace(carvedBlockEntity, JACK_O_MELON_HALO, matrixStack, vertexConsumerProvider, lightAbove,
-					OverlayTexture.DEFAULT_UV);
+			renderFace(carvedBlockEntity, ((UncarvableBlock) block).getRenderId(), matrixStack, vertexConsumerProvider,
+					lightAbove, OverlayTexture.DEFAULT_UV);
 		}
 
 		matrixStack.pop();
@@ -207,35 +195,22 @@ public class CarvedBlockEntityRenderer extends BlockEntityRenderer<CarvedBlockEn
 						dir = Direction.NORTH;
 						break;
 					}
-
-					if (block == CarveMyPumpkin.CARVED_PUMPKIN) {
+					if (block instanceof CarvableBlock) {
 						for (int x = 0; x < 16; x++) {
 							for (int y = 0; y < 16; y++) {
-								renderModel(x, y, carving, PUMPKIN_HALO, dir, matrixStack, vertexConsumerProvider, i,
-										j);
-							}
-						}
-					} else if (block == CarveMyPumpkin.JACK_O_LANTERN) {
-						for (int x = 0; x < 16; x++) {
-							for (int y = 0; y < 16; y++) {
-								renderModel(x, y, carving, JACK_O_LANTERN_HALO, dir, matrixStack,
+								renderModel(x, y, carving, ((CarvableBlock) block).getRenderId(), dir, matrixStack,
 										vertexConsumerProvider, i, j);
 							}
 						}
-					} else if (block == CarveMyPumpkin.CARVED_MELON) {
+					} else if (block instanceof UncarvableBlock) {
 						for (int x = 0; x < 16; x++) {
 							for (int y = 0; y < 16; y++) {
-								renderModel(x, y, carving, MELON_HALO, dir, matrixStack, vertexConsumerProvider, i, j);
-							}
-						}
-					} else if (block == CarveMyPumpkin.JACK_O_MELON) {
-						for (int x = 0; x < 16; x++) {
-							for (int y = 0; y < 16; y++) {
-								renderModel(x, y, carving, JACK_O_MELON_HALO, dir, matrixStack, vertexConsumerProvider,
-										i, j);
+								renderModel(x, y, carving, ((UncarvableBlock) block).getRenderId(), dir, matrixStack,
+										vertexConsumerProvider, i, j);
 							}
 						}
 					}
+
 				}
 			}
 		}

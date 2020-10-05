@@ -13,6 +13,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -91,6 +92,11 @@ public class UncarvableMelonBlock extends UncarvableBlock {
 	@Override
 	public Block getCarvingBlock() {
 		return Blocks.MELON;
+	}
+
+	@Override
+	public Identifier getRenderId() {
+		return new Identifier("carvepump", "textures/entity/jack_o_melon_halo_colors.png");
 	}
 
 }
