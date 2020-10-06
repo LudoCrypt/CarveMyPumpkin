@@ -39,14 +39,56 @@ public class CarvedBlockEntityRenderer extends BlockEntityRenderer<CarvedBlockEn
 		if (block instanceof CarvableBlock) {
 			matrixStack.push();
 			matrixStack.translate(0.5, 0.5, 0.5);
-			int lightAbove = WorldRenderer.getLightmapCoordinates(carvedBlockEntity.getWorld(),
-					carvedBlockEntity.getPos().up());
+
+			int light = 0x00F000F0;
+
+			if (carvedBlockEntity.getWorld().getLightLevel(carvedBlockEntity.getPos()) == 0) {
+				if (!carvedBlockEntity.getWorld().getBlockState(carvedBlockEntity.getPos().up()).isOpaque()) {
+					light = WorldRenderer.getLightmapCoordinates(carvedBlockEntity.getWorld(),
+							carvedBlockEntity.getPos().up());
+				} else {
+					if (!carvedBlockEntity.getWorld().getBlockState(carvedBlockEntity.getPos().north()).isOpaque()) {
+						light = WorldRenderer.getLightmapCoordinates(carvedBlockEntity.getWorld(),
+								carvedBlockEntity.getPos().north());
+					} else {
+						if (!carvedBlockEntity.getWorld().getBlockState(carvedBlockEntity.getPos().south())
+								.isOpaque()) {
+							light = WorldRenderer.getLightmapCoordinates(carvedBlockEntity.getWorld(),
+									carvedBlockEntity.getPos().south());
+						} else {
+							if (!carvedBlockEntity.getWorld().getBlockState(carvedBlockEntity.getPos().east())
+									.isOpaque()) {
+								light = WorldRenderer.getLightmapCoordinates(carvedBlockEntity.getWorld(),
+										carvedBlockEntity.getPos().east());
+							} else {
+								if (!carvedBlockEntity.getWorld().getBlockState(carvedBlockEntity.getPos().west())
+										.isOpaque()) {
+									light = WorldRenderer.getLightmapCoordinates(carvedBlockEntity.getWorld(),
+											carvedBlockEntity.getPos().west());
+								} else {
+									if (!carvedBlockEntity.getWorld().getBlockState(carvedBlockEntity.getPos().down())
+											.isOpaque()) {
+										light = WorldRenderer.getLightmapCoordinates(carvedBlockEntity.getWorld(),
+												carvedBlockEntity.getPos().down());
+									} else {
+										light = 0;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
 			MinecraftClient.getInstance().getItemRenderer().renderItem(
-					new ItemStack(((CarvableBlock) block).getCarvingBlock()), ModelTransformation.Mode.NONE, lightAbove,
+					new ItemStack(((CarvableBlock) block).getCarvingBlock()), ModelTransformation.Mode.NONE, light,
 					OverlayTexture.DEFAULT_UV, matrixStack, vertexConsumerProvider);
+
 			matrixStack.translate(-0.5, -0.5, -0.5);
+
 			renderFace(carvedBlockEntity, ((CarvableBlock) block).getRenderId(), matrixStack, vertexConsumerProvider,
-					lightAbove, OverlayTexture.DEFAULT_UV);
+					light, OverlayTexture.DEFAULT_UV);
+
 			matrixStack.pop();
 		}
 

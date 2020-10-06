@@ -31,6 +31,7 @@ dependencies {
 	
 	modImplementation "de.siphalor:nbtcrafting-1.16:2+"
 	include "de.siphalor:nbtcrafting-1.16:2+"
+
 }
 
 processResources {
