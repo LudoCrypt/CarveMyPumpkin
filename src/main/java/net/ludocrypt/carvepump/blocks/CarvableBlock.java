@@ -215,7 +215,7 @@ public class CarvableBlock extends BlockWithEntity {
 		if (this.snowGolemPattern == null) {
 			this.snowGolemPattern = BlockPatternBuilder.start().aisle("^", "#", "#")
 					.where('^', CachedBlockPosition.matchesBlockState((state) -> {
-						return state != null && (Arrays.stream(CarveMyPumpkin.carvableBlocks)
+						return state != null && (Arrays.stream(CarveMyPumpkin.golemSpawningBlocks)
 								.anyMatch(t -> t.equals(state.getBlock())));
 					}))
 					.where('#', CachedBlockPosition.matchesBlockState(BlockStatePredicate.forBlock(Blocks.SNOW_BLOCK)))
@@ -229,7 +229,7 @@ public class CarvableBlock extends BlockWithEntity {
 		if (this.ironGolemPattern == null) {
 			this.ironGolemPattern = BlockPatternBuilder.start().aisle("~^~", "###", "~#~")
 					.where('^', CachedBlockPosition.matchesBlockState((state) -> {
-						return state != null && (Arrays.stream(CarveMyPumpkin.carvableBlocks)
+						return state != null && (Arrays.stream(CarveMyPumpkin.golemSpawningBlocks)
 								.anyMatch(t -> t.equals(state.getBlock())));
 					}))
 					.where('#', CachedBlockPosition.matchesBlockState(BlockStatePredicate.forBlock(Blocks.IRON_BLOCK)))

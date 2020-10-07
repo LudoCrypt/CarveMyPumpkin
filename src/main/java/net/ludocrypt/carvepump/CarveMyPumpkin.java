@@ -62,6 +62,8 @@ public class CarveMyPumpkin implements ModInitializer {
 			Blocks.PUMPKIN, Blocks.MELON };
 	// Not to be confused with the list of blockEntity carvable Blocks
 	public static final Block[] carvedBlocksList = { CARVED_PUMPKIN, JACK_O_LANTERN, CARVED_MELON, JACK_O_MELON };
+	// Blocks to spawn golems
+	public static final Block[] golemSpawningBlocks = { CARVED_PUMPKIN, JACK_O_LANTERN, Blocks.PUMPKIN, Blocks.MELON };
 
 	@Override
 	public void onInitialize() {
