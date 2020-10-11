@@ -30,19 +30,25 @@ public class CarveMyPumpkin implements ModInitializer {
 	public static BlockEntityType<CarvedBlockEntity> CARVED_BLOCK_ENTITY;
 
 	public static final Block CARVED_PUMPKIN = new CarvableBlock(
-			AbstractBlock.Settings.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD),
+			AbstractBlock.Settings.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD)
+					.nonOpaque(),
 			Blocks.PUMPKIN, new Identifier("carvepump", "textures/entity/pumpkin_halo_colors.png"), true);
-	public static final Block JACK_O_LANTERN = new CarvableBlock(AbstractBlock.Settings
-			.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD).luminance((state) -> {
-				return 15;
-			}), Blocks.PUMPKIN, new Identifier("carvepump", "textures/entity/jack_o_lantern_halo_colors.png"), false);
+	public static final Block JACK_O_LANTERN = new CarvableBlock(
+			AbstractBlock.Settings.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD)
+					.nonOpaque().luminance((state) -> {
+						return 15;
+					}),
+			Blocks.PUMPKIN, new Identifier("carvepump", "textures/entity/jack_o_lantern_halo_colors.png"), false);
 	public static final Block CARVED_MELON = new CarvableBlock(
-			AbstractBlock.Settings.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD),
+			AbstractBlock.Settings.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD)
+					.nonOpaque(),
 			Blocks.MELON, new Identifier("carvepump", "textures/entity/melon_halo_colors.png"), true);
-	public static final Block JACK_O_MELON = new CarvableBlock(AbstractBlock.Settings
-			.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD).luminance((state) -> {
-				return 15;
-			}), Blocks.MELON, new Identifier("carvepump", "textures/entity/jack_o_melon_halo_colors.png"), false);
+	public static final Block JACK_O_MELON = new CarvableBlock(
+			AbstractBlock.Settings.of(Material.GOURD, MaterialColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD)
+					.nonOpaque().luminance((state) -> {
+						return 15;
+					}),
+			Blocks.MELON, new Identifier("carvepump", "textures/entity/jack_o_melon_halo_colors.png"), false);
 
 	public static final ToolItem WOODEN_CARVER = new CarverItem(ToolMaterials.WOOD, 2, 1,
 			new Item.Settings().group(ItemGroup.TOOLS).maxCount(1));

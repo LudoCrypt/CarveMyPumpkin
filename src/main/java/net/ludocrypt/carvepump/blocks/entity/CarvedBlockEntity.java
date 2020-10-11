@@ -2,13 +2,15 @@ package net.ludocrypt.carvepump.blocks.entity;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
 import net.ludocrypt.carvepump.CarveMyPumpkin;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 
-public class CarvedBlockEntity extends BlockEntity {
+public class CarvedBlockEntity extends BlockEntity implements BlockEntityClientSerializable {
 
 	public byte[] pixelsCarved1 = new byte[16];
 	public byte[] pixelsCarved2 = new byte[16];
@@ -52,6 +54,19 @@ public class CarvedBlockEntity extends BlockEntity {
 	public void fromTag(BlockState state, CompoundTag tag) {
 		super.fromTag(state, tag);
 		deserializeCarving(tag);
+	}
+
+	@Override
+	public CompoundTag toClientTag(CompoundTag tag) {
+		return toTag(tag);
+	}
+
+	@Override
+	@SuppressWarnings("resource")
+	public void fromClientTag(CompoundTag tag) {
+		fromTag(null, tag);
+		MinecraftClient.getInstance().worldRenderer.scheduleBlockRenders(pos.getX(), pos.getY(), pos.getZ(), pos.getX(),
+				pos.getY(), pos.getZ());
 	}
 
 	public byte[][] get2DArray() {
@@ -175,6 +190,9 @@ public class CarvedBlockEntity extends BlockEntity {
 		pixelsCarved14 = getArrayFrom2DArray(carving, 14);
 		pixelsCarved15 = getArrayFrom2DArray(carving, 15);
 		pixelsCarved16 = getArrayFrom2DArray(carving, 16);
+		if (!world.isClient) {
+			sync();
+		}
 	}
 
 	@Environment(EnvType.CLIENT)
