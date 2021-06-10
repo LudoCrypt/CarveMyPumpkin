@@ -11,10 +11,7 @@ public class CarveMyPumpkinClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-
-		BlockEntityRendererRegistry.INSTANCE.register(CarveMyPumpkin.CARVED_BLOCK_ENTITY,
-				CarvedBlockEntityRenderer::new);
-
+		BlockEntityRendererRegistry.INSTANCE.register(CarveMyPumpkin.CARVED_BLOCK_ENTITY, (context) -> new CarvedBlockEntityRenderer());
 	}
 
 }

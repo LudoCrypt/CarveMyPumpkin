@@ -8,7 +8,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.util.math.BlockPos;
 
 public class CarvedBlockEntity extends BlockEntity implements BlockEntityClientSerializable {
 
@@ -29,8 +30,8 @@ public class CarvedBlockEntity extends BlockEntity implements BlockEntityClientS
 	public byte[] pixelsCarved15 = new byte[16];
 	public byte[] pixelsCarved16 = new byte[16];
 
-	public CarvedBlockEntity() {
-		super(CarveMyPumpkin.CARVED_BLOCK_ENTITY);
+	public CarvedBlockEntity(BlockPos blockPos, BlockState blockState) {
+		super(CarveMyPumpkin.CARVED_BLOCK_ENTITY, blockPos, blockState);
 	}
 
 	public void setValue(int x, int y, byte newValue) {
@@ -45,47 +46,37 @@ public class CarvedBlockEntity extends BlockEntity implements BlockEntityClientS
 	}
 
 	@Override
-	public CompoundTag toTag(CompoundTag tag) {
-		super.toTag(tag);
+	public NbtCompound writeNbt(NbtCompound tag) {
+		super.writeNbt(tag);
 		return serializeCarving(tag);
 	}
 
 	@Override
-	public void fromTag(BlockState state, CompoundTag tag) {
-		super.fromTag(state, tag);
+	public void readNbt(NbtCompound tag) {
+		super.readNbt(tag);
 		deserializeCarving(tag);
 	}
 
 	@Override
-	public CompoundTag toClientTag(CompoundTag tag) {
-		return toTag(tag);
+	public NbtCompound toClientTag(NbtCompound tag) {
+		return writeNbt(tag);
 	}
 
 	@Override
 	@SuppressWarnings("resource")
-	public void fromClientTag(CompoundTag tag) {
-		fromTag(null, tag);
-		MinecraftClient.getInstance().worldRenderer.scheduleBlockRenders(pos.getX(), pos.getY(), pos.getZ(), pos.getX(),
-				pos.getY(), pos.getZ());
+	public void fromClientTag(NbtCompound tag) {
+		readNbt(tag);
+		MinecraftClient.getInstance().worldRenderer.scheduleBlockRenders(pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	public byte[][] get2DArray() {
-		byte[][] array = { pixelsCarved1.clone(), pixelsCarved2.clone(), pixelsCarved3.clone(), pixelsCarved4.clone(),
-				pixelsCarved5.clone(), pixelsCarved6.clone(), pixelsCarved7.clone(), pixelsCarved8.clone(),
-				pixelsCarved9.clone(), pixelsCarved10.clone(), pixelsCarved11.clone(), pixelsCarved12.clone(),
-				pixelsCarved13.clone(), pixelsCarved14.clone(), pixelsCarved15.clone(), pixelsCarved16.clone() };
+		byte[][] array = { pixelsCarved1.clone(), pixelsCarved2.clone(), pixelsCarved3.clone(), pixelsCarved4.clone(), pixelsCarved5.clone(), pixelsCarved6.clone(), pixelsCarved7.clone(), pixelsCarved8.clone(), pixelsCarved9.clone(), pixelsCarved10.clone(), pixelsCarved11.clone(), pixelsCarved12.clone(), pixelsCarved13.clone(), pixelsCarved14.clone(), pixelsCarved15.clone(), pixelsCarved16.clone() };
 		return array;
 	}
 
 	public byte[] getArrayFrom2DArray(byte[][] carving, int i) {
 		i--;
-		byte[] array = {
-
-				carving[i][0], carving[i][1], carving[i][2], carving[i][3], carving[i][4], carving[i][5], carving[i][6],
-				carving[i][7], carving[i][8], carving[i][9], carving[i][10], carving[i][11], carving[i][12],
-				carving[i][13], carving[i][14], carving[i][15]
-
-		};
+		byte[] array = { carving[i][0], carving[i][1], carving[i][2], carving[i][3], carving[i][4], carving[i][5], carving[i][6], carving[i][7], carving[i][8], carving[i][9], carving[i][10], carving[i][11], carving[i][12], carving[i][13], carving[i][14], carving[i][15] };
 		return array;
 	}
 
@@ -102,7 +93,7 @@ public class CarvedBlockEntity extends BlockEntity implements BlockEntityClientS
 		return !carved;
 	}
 
-	public CompoundTag serializeCarving(CompoundTag tag) {
+	public NbtCompound serializeCarving(NbtCompound tag) {
 		tag.putByteArray("pixelsCarved1", pixelsCarved1);
 		tag.putByteArray("pixelsCarved2", pixelsCarved2);
 		tag.putByteArray("pixelsCarved3", pixelsCarved3);
@@ -122,7 +113,7 @@ public class CarvedBlockEntity extends BlockEntity implements BlockEntityClientS
 		return tag;
 	}
 
-	public void deserializeCarving(CompoundTag tag) {
+	public void deserializeCarving(NbtCompound tag) {
 		if (tag.contains("pixelsCarved1", 7)) {
 			pixelsCarved1 = tag.getByteArray("pixelsCarved1");
 		}
@@ -214,7 +205,7 @@ public class CarvedBlockEntity extends BlockEntity implements BlockEntityClientS
 		byte[] stackPixelsCarved15 = null;
 		byte[] stackPixelsCarved16 = null;
 		if (stack.hasTag()) {
-			CompoundTag tag = stack.getSubTag("BlockEntityTag");
+			NbtCompound tag = stack.getSubTag("BlockEntityTag");
 			if (tag != null) {
 				if (tag.contains("pixelsCarved1", 7)) {
 					stackPixelsCarved1 = tag.getByteArray("pixelsCarved1");
@@ -267,10 +258,7 @@ public class CarvedBlockEntity extends BlockEntity implements BlockEntityClientS
 			}
 		}
 
-		byte[][] carving = { stackPixelsCarved1, stackPixelsCarved2, stackPixelsCarved3, stackPixelsCarved4,
-				stackPixelsCarved5, stackPixelsCarved6, stackPixelsCarved7, stackPixelsCarved8, stackPixelsCarved9,
-				stackPixelsCarved10, stackPixelsCarved11, stackPixelsCarved12, stackPixelsCarved13, stackPixelsCarved14,
-				stackPixelsCarved15, stackPixelsCarved16 };
+		byte[][] carving = { stackPixelsCarved1, stackPixelsCarved2, stackPixelsCarved3, stackPixelsCarved4, stackPixelsCarved5, stackPixelsCarved6, stackPixelsCarved7, stackPixelsCarved8, stackPixelsCarved9, stackPixelsCarved10, stackPixelsCarved11, stackPixelsCarved12, stackPixelsCarved13, stackPixelsCarved14, stackPixelsCarved15, stackPixelsCarved16 };
 		return carving;
 	}
 

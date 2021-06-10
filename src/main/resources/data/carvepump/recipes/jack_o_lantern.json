@@ -1,21 +1,3 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"pattern": [
-		"X",
-		"#"
-	],
-	"key": {
-		"X": {
-			"item": "carvepump:carved_pumpkin"
-		},
-		"#": {
-			"item": "minecraft:torch"
-		}
-	},
-	"result": {
-		"item": "carvepump:jack_o_lantern",
-		"data": {
-			"$": "i0"
-		}
-	}
+	"type": "carvepump:jack_o_lantern_special"
 }

@@ -19,8 +19,7 @@ import net.minecraft.item.ItemStack;
 public class BuiltinModelItemRendererMixin {
 
 	@Inject(method = "render", at = @At("HEAD"))
-	private void render(ItemStack stack, ModelTransformation.Mode mode, MatrixStack matrices,
-			VertexConsumerProvider vertexConsumers, int light, int overlay, CallbackInfo ci) {
+	private void carvemypumpkin_render(ItemStack stack, ModelTransformation.Mode mode, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, CallbackInfo ci) {
 		CarvedBlockEntityRenderer.renderInHand(stack, mode, matrices, vertexConsumers, light, overlay);
 	}
 }

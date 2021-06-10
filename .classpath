@@ -13,23 +13,103 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="bin/default"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/patchy/1.1/5e398295fbcb8fb590e3e3bddace13f659792e50/patchy-1.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/patchy/1.1/aef610b34a1be37fa851825f12372b78424d8903/patchy-1.1.jar">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-16/"/>
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/19.0.0/46283be41e938dba9ac928ab98de7be6f7a436f1/annotations-19.0.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/19.0.0/efbff6752f67a7c9de3e4251c086a88e23591dfd/annotations-19.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-mappings-parser/0.2.2.14/b7020df2520820f670dfaedd2cf23666d24a2aa8/tiny-mappings-parser-0.2.2.14.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/oshi-project/oshi-core/1.1/1ec1ab1e6ac5a1572edfd0dd9ac95e83684b8a65/oshi-core-1.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/oshi-project/oshi-core/1.1/9ddf7b048a8d701be231c0f4f95fd986198fd2d8/oshi-core-1.1.jar">
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.9.2+mixin.0.8.2/22567a9448c9d073c85f6f64ae8fb16e6b1b3ef4/sponge-mixin-0.9.2+mixin.0.8.2-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.9.2+mixin.0.8.2/12c437eebf031967eaa7daad861e115932772cc7/sponge-mixin-0.9.2+mixin.0.8.2.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.4.0/9d45d3dc35711eef7267d8b4fc2c0dc482ef9fd2/jna-4.4.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.4.0/cb208278274bf12ebdb56c61bd7407e6f774d65a/jna-4.4.0.jar">
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-remapper/0.3.0.70/a597892ae45ba464f80a5d1c22ee70262bd5610c/tiny-remapper-0.3.0.70-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-remapper/0.3.0.70/8a79e9b88fbc6b49dc4312bb1efcf6c4a8c818df/tiny-remapper-0.3.0.70.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/platform/3.4.0/e3f70017be8100d3d6923f50b3d2ee17714e9c13/platform-3.4.0.jar">
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/access-widener/1.0.0/67214f6fae7f8c54af0d7bb40b9977a1a5a5580e/access-widener-1.0.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/access-widener/1.0.0/22264da061b12132ecfe15f68e0a90a11b14e6f9/access-widener-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/fabric-loader-sat4j/2.3.5.4/f8fe5353909430b5845ae24ea1e01d83f12ad916/fabric-loader-sat4j-2.3.5.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.google.jimfs/jimfs/1.2-fabric/6cb00cae551b619536022d7725889c7d63b459/jimfs-1.2-fabric-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.google.jimfs/jimfs/1.2-fabric/c3705f1acc511edb8ad4fd4e86ae4634a25315bb/jimfs-1.2-fabric.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.1/3fb15dd478bf8dcb039aa0d035f9fff9e4229c61/asm-9.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.1/a99500cf6eea30535eeac6be73899d048f8d12a8/asm-9.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.1/296a49fa21d815fc92eec1007ea2708983e8df2c/asm-analysis-9.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.1/4f61b83b81d8b659958f4bcc48907e93ecea55a0/asm-analysis-9.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.1/87a45a18693ec2d1eed3beb40ac47f82feb7fb27/asm-commons-9.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.1/8b971b182eb5cf100b9e8d4119152d83e00e0fdd/asm-commons-9.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.1/ef07227f641685b6473fd0fbb4931afd6539df1a/asm-tree-9.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.1/c333f2a855069cb8eb17a40a3eb8b1b67755d0eb/asm-tree-9.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.1/d09e58920a332647ed8c65ad6ea2e7692e449f40/asm-util-9.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.1/36464a45d871779f3383a8a9aba2b26562a86729/asm-util-9.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/yarn/1.17+build.5/b7f7689b9522adb11c247d88a408f809bbc7b2cc/yarn-1.17+build.5-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/yarn/1.17+build.5/b9f8e3290ce002e0d14aa199a0dd89c622fc493c/yarn-1.17+build.5-constants.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/blocklist/1.0.5/ad6b9fd6a4a2afa89808f06e140bb8d54fd465d1/blocklist-1.0.5-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/blocklist/1.0.5/9da540f21c9a8d5ed7c029e1f88d1a6dabb0d6ad/blocklist-1.0.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/patchy/2.1.6/ce112c16c6275fdfff2d30208533ec906a191f71/patchy-2.1.6.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.github.oshi/oshi-core/5.7.4/7d46a42de1af8c81d401d50082f285853307b31d/oshi-core-5.7.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.8.0/3551d8d827e54858214107541d3aff9c615cb615/jna-5.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.8.0/2f12f6d7f7652270d13624cef1b82d8cd9a5398e/jna-platform-5.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.8.0-beta4/83b0359d847ee053d745be7ec0d8e9e8a44304b4/slf4j-api-1.8.0-beta4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-slf4j18-impl/2.14.1/312b4d91b21160b9fab43600fa787f31e8cab930/log4j-slf4j18-impl-2.14.1.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -39,7 +119,7 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/javabridge/1.0.22/5f5f10138f75ddb87a9ad466c3432f3a7f28a273/javabridge-1.0.22-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/javabridge/1.0.22/6aa6453aa99a52a5cd91749da1af6ab70e082ab3/javabridge-1.0.22.jar">
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/javabridge/1.1.23/b001d6a8e85862b9197bd8943c23abfa6b402a3c/javabridge-1.1.23-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/javabridge/1.1.23/3e5084d916ba393dfd82928ec97663aeb10b2e2c/javabridge-1.1.23.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -84,7 +164,7 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/brigadier/1.0.17/36e6dccfa011566fb0c9314d50ecc5a1c0bb2d51/brigadier-1.0.17-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/brigadier/1.0.17/c6b7dc51dd44379cc751b7504816006e9be4b1e6/brigadier-1.0.17.jar">
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/brigadier/1.0.18/f93ce897789cb28518ebb7a8a6bc3946922bc8b6/brigadier-1.0.18-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/brigadier/1.0.18/c1ef1234282716483c92183f49bef47b1a89bfa9/brigadier-1.0.18.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -99,7 +179,7 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/authlib/1.6.25/de9a1ba1e01d2f3e03a0b5812f4f4e51624a671e/authlib-1.6.25-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/authlib/1.6.25/5bd0ce00c1e1f483641f85bccb02d1956dd77ec0/authlib-1.6.25.jar">
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/authlib/2.3.31/fc7c345d36f55c75a59f2820ba5efb20b7df37ac/authlib-2.3.31-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.mojang/authlib/2.3.31/bbd00ca33b052f73a6312254780fc580d2da3535/authlib-2.3.31.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -129,12 +209,12 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.8.1/a5edb6b8c77843c8be98e0cb1f875699e76ee122/log4j-api-2.8.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.8.1/e801d13612e22cad62a3f4f3fe7fdbe6334a8e72/log4j-api-2.8.1.jar">
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.14.1/b2327c47ca413c1ec183575b19598e281fcd74d8/log4j-api-2.14.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.14.1/cd8858fbbde69f46bce8db1152c18a43328aae78/log4j-api-2.14.1.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.8.1/a0a7f683da620c345b502fff04d1e46cde2e8d9/log4j-core-2.8.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.8.1/4ac28ff2f1ddf05dae3043a190451e8c46b73c31/log4j-core-2.8.1.jar">
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.14.1/7f640e4855733d9532eed15af62c54956e7b8224/log4j-core-2.14.1-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.14.1/9141212b8507ab50a45525b545b39d224614528b/log4j-core-2.14.1.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -179,277 +259,247 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-mappings-parser/0.2.2.14/b7020df2520820f670dfaedd2cf23666d24a2aa8/tiny-mappings-parser-0.2.2.14.jar">
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/ca.weblite/java-objc-bridge/1.0.0/865837a198189aee737019561ece842827f24278/java-objc-bridge-1.0.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/ca.weblite/java-objc-bridge/1.0.0/6ef160c3133a78de015830860197602ca1c855d3/java-objc-bridge-1.0.0.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.8.1+build.21/649e305ebae8a603c9ff34bd682c8bb3d88ae7f6/sponge-mixin-0.8.1+build.21-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.8.1+build.21/94da90bdbee9f95bf6d6c41ca87943419a0b5624/sponge-mixin-0.8.1+build.21.jar">
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/fabric-loom/1.17-mapped-net.fabricmc.yarn-1.17+build.5-v2/minecraft-1.17-mapped-net.fabricmc.yarn-1.17+build.5-v2-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/fabric-loom/1.17-mapped-net.fabricmc.yarn-1.17+build.5-v2/minecraft-1.17-mapped-net.fabricmc.yarn-1.17+build.5-v2.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-remapper/0.2.2.64/3ca1e83142735ded50e299f4ef093558aab6678e/tiny-remapper-0.2.2.64-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-remapper/0.2.2.64/34702a4109c7a9bfe1cb599f9fc46b2c06a3e8f0/tiny-remapper-0.2.2.64.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-api/0.34.9+1.17/fabric-api-0.34.9+1.17-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-api/0.34.9+1.17/fabric-api-0.34.9+1.17.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/fabric-loader-sat4j/2.3.5.4/f8fe5353909430b5845ae24ea1e01d83f12ad916/fabric-loader-sat4j-2.3.5.4.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-api-lookup-api-v1/1.0.2+a02b4463d5/fabric-api-lookup-api-v1-1.0.2+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-api-lookup-api-v1/1.0.2+a02b4463d5/fabric-api-lookup-api-v1-1.0.2+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.google.jimfs/jimfs/1.2-fabric/6cb00cae551b619536022d7725889c7d63b459/jimfs-1.2-fabric-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/com.google.jimfs/jimfs/1.2-fabric/c3705f1acc511edb8ad4fd4e86ae4634a25315bb/jimfs-1.2-fabric.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-blockrenderlayer-v1/1.1.5+a02b4463d5/fabric-blockrenderlayer-v1-1.1.5+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-blockrenderlayer-v1/1.1.5+a02b4463d5/fabric-blockrenderlayer-v1-1.1.5+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/8.0/d6984ada3c4fca98afbe71196cb3a0dc715b98de/asm-8.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/8.0/d1a17d07c60e9e82c8b31b1d8f9ca98726418db4/asm-8.0.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-commands-v0/0.2.2+92519afad5/fabric-commands-v0-0.2.2+92519afad5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-commands-v0/0.2.2+92519afad5/fabric-commands-v0-0.2.2+92519afad5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/8.0/4d2e2a74691b78de99d2b401bc1057cfd95d7cd/asm-analysis-8.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/8.0/57b12c6a9e14788f63ee3c6c0132fadcce1727d0/asm-analysis-8.0.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-command-api-v1/1.1.1+a02b4463d5/fabric-command-api-v1-1.1.1+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-command-api-v1/1.1.1+a02b4463d5/fabric-command-api-v1-1.1.1+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/8.0/ba5ccc27aa05831a74c01c17cb8058b9c2bfdb26/asm-commons-8.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/8.0/ea2231bdb3394bcca5989db7f7586f743829a9cb/asm-commons-8.0.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-containers-v0/0.1.12+a02b4463d5/fabric-containers-v0-0.1.12+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-containers-v0/0.1.12+a02b4463d5/fabric-containers-v0-0.1.12+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/8.0/689a76af2ee494d7c534a4a2c7c8c3e24d2b97a1/asm-tree-8.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/8.0/7b31ca94da9f57334a5aed79b40f2b88c5ee9f4f/asm-tree-8.0.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-content-registries-v0/0.2.2+a02b4463d5/fabric-content-registries-v0-0.2.2+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-content-registries-v0/0.2.2+a02b4463d5/fabric-content-registries-v0-0.2.2+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/8.0/30e8a068562c4866a6ce8e73d0d3730590ad492c/asm-util-8.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/8.0/b21996293fd49851ed9017cfde3191e49f77fbd0/asm-util-8.0.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-dimensions-v1/2.0.10+a02b4463d5/fabric-dimensions-v1-2.0.10+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-dimensions-v1/2.0.10+a02b4463d5/fabric-dimensions-v1-2.0.10+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/fabric-loom/1.16.3-mapped-net.fabricmc.yarn-1.16.3+build.12-v2/minecraft-1.16.3-mapped-net.fabricmc.yarn-1.16.3+build.12-v2-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/fabric-loom/1.16.3-mapped-net.fabricmc.yarn-1.16.3+build.12-v2/minecraft-1.16.3-mapped-net.fabricmc.yarn-1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-entity-events-v1/1.1.0+a02b4463d5/fabric-entity-events-v1-1.1.0+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-entity-events-v1/1.1.0+a02b4463d5/fabric-entity-events-v1-1.1.0+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-api-0.21.0+build.407-1.16@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-api-0.21.0+build.407-1.16@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-events-interaction-v0/0.4.8+a02b4463d5/fabric-events-interaction-v0-0.4.8+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-events-interaction-v0/0.4.8+a02b4463d5/fabric-events-interaction-v0-0.4.8+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/nbtcrafting-1.16-2.0.0-rc.7+mc1.16.2-pre1@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/nbtcrafting-1.16-2.0.0-rc.7+mc1.16.2-pre1@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-events-lifecycle-v0/0.2.1+92519afad5/fabric-events-lifecycle-v0-0.2.1+92519afad5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-events-lifecycle-v0/0.2.1+92519afad5/fabric-events-lifecycle-v0-0.2.1+92519afad5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-biome-api-v1-2.0.0+c29459ab95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-biome-api-v1-2.0.0+c29459ab95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-item-api-v1/1.2.4+a02b4463d5/fabric-item-api-v1-1.2.4+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-item-api-v1/1.2.4+a02b4463d5/fabric-item-api-v1-1.2.4+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-blockrenderlayer-v1-1.1.4+c6a8ea8995@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-blockrenderlayer-v1-1.1.4+c6a8ea8995@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-item-groups-v0/0.2.10+b7ab6121d5/fabric-item-groups-v0-0.2.10+b7ab6121d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-item-groups-v0/0.2.10+b7ab6121d5/fabric-item-groups-v0-0.2.10+b7ab6121d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-command-api-v1-1.0.8+5ce5339895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-command-api-v1-1.0.8+5ce5339895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-lifecycle-events-v1/1.4.4+a02b4463d5/fabric-lifecycle-events-v1-1.4.4+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-lifecycle-events-v1/1.4.4+a02b4463d5/fabric-lifecycle-events-v1-1.4.4+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-commands-v0-0.2.0+52d3083695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-commands-v0-0.2.0+52d3083695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-loot-tables-v1/1.0.4+a02b4463d5/fabric-loot-tables-v1-1.0.4+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-loot-tables-v1/1.0.4+a02b4463d5/fabric-loot-tables-v1-1.0.4+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-containers-v0-0.1.8+045df74f95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-containers-v0-0.1.8+045df74f95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-mining-levels-v0/0.1.3+92519afad5/fabric-mining-levels-v0-0.1.3+92519afad5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-mining-levels-v0/0.1.3+92519afad5/fabric-mining-levels-v0-0.1.3+92519afad5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-content-registries-v0-0.1.9+059ea86695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-content-registries-v0-0.1.9+059ea86695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-models-v0/0.3.0+a02b4463d5/fabric-models-v0-0.3.0+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-models-v0/0.3.0+a02b4463d5/fabric-models-v0-0.3.0+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-crash-report-info-v1-0.1.2+b7f9825d95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-crash-report-info-v1-0.1.2+b7f9825d95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-networking-v0/0.3.2+92519afad5/fabric-networking-v0-0.3.2+92519afad5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-networking-v0/0.3.2+92519afad5/fabric-networking-v0-0.3.2+92519afad5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-events-interaction-v0-0.4.0+e2e6cdad95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-events-interaction-v0-0.4.0+e2e6cdad95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-registry-sync-v0/0.7.9+a02b4463d5/fabric-registry-sync-v0-0.7.9+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-registry-sync-v0/0.7.9+a02b4463d5/fabric-registry-sync-v0-0.7.9+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-events-lifecycle-v0-0.2.0+16acbe5b95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-events-lifecycle-v0-0.2.0+16acbe5b95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-screen-handler-api-v1/1.1.8+a02b4463d5/fabric-screen-handler-api-v1-1.1.8+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-screen-handler-api-v1/1.1.8+a02b4463d5/fabric-screen-handler-api-v1-1.1.8+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-game-rule-api-v1-1.0.1+74685c1495@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-game-rule-api-v1-1.0.1+74685c1495@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-networking-api-v1/1.0.11+b7ab6121d5/fabric-networking-api-v1-1.0.11+b7ab6121d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-networking-api-v1/1.0.11+b7ab6121d5/fabric-networking-api-v1-1.0.11+b7ab6121d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-item-api-v1-1.1.0+29679fd695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-item-api-v1-1.1.0+29679fd695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-networking-blockentity-v0/0.2.11+a02b4463d5/fabric-networking-blockentity-v0-0.2.11+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-networking-blockentity-v0/0.2.11+a02b4463d5/fabric-networking-blockentity-v0-0.2.11+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-item-groups-v0-0.2.0+438f963695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-item-groups-v0-0.2.0+438f963695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-object-builders-v0/0.7.3+a02b4463d5/fabric-object-builders-v0-0.7.3+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-object-builders-v0/0.7.3+a02b4463d5/fabric-object-builders-v0-0.7.3+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-key-binding-api-v1-1.0.1+730711c695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-key-binding-api-v1-1.0.1+730711c695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-object-builder-api-v1/1.10.9+b7ab6121d5/fabric-object-builder-api-v1-1.10.9+b7ab6121d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-object-builder-api-v1/1.10.9+b7ab6121d5/fabric-object-builder-api-v1-1.10.9+b7ab6121d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-keybindings-v0-0.2.0+3fa9f7c595@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-keybindings-v0-0.2.0+3fa9f7c595@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-particles-v1/0.2.4+a02b4463d5/fabric-particles-v1-0.2.4+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-particles-v1/0.2.4+a02b4463d5/fabric-particles-v1-0.2.4+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-lifecycle-events-v1-1.2.0+74cc3b2095@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-lifecycle-events-v1-1.2.0+74cc3b2095@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-renderer-indigo/0.4.8+a02b4463d5/fabric-renderer-indigo-0.4.8+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-renderer-indigo/0.4.8+a02b4463d5/fabric-renderer-indigo-0.4.8+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-loot-tables-v1-1.0.1+432ea18895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-loot-tables-v1-1.0.1+432ea18895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-renderer-api-v1/0.4.2+a02b4463d5/fabric-renderer-api-v1-0.4.2+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-renderer-api-v1/0.4.2+a02b4463d5/fabric-renderer-api-v1-0.4.2+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-mining-levels-v0-0.1.2+b764ce9995@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-mining-levels-v0-0.1.2+b764ce9995@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-renderer-registries-v1/3.2.0+a02b4463d5/fabric-renderer-registries-v1-3.2.0+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-renderer-registries-v1/3.2.0+a02b4463d5/fabric-renderer-registries-v1-3.2.0+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-models-v0-0.1.0+dfdb52d695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-models-v0-0.1.0+dfdb52d695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-rendering-data-attachment-v1/0.1.5+a02b4463d5/fabric-rendering-data-attachment-v1-0.1.5+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-rendering-data-attachment-v1/0.1.5+a02b4463d5/fabric-rendering-data-attachment-v1-0.1.5+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-networking-blockentity-v0-0.2.5+b50ffc7b95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-networking-blockentity-v0-0.2.5+b50ffc7b95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-rendering-fluids-v1/0.1.13+a02b4463d5/fabric-rendering-fluids-v1-0.1.13+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-rendering-fluids-v1/0.1.13+a02b4463d5/fabric-rendering-fluids-v1-0.1.13+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-object-builder-api-v1-1.8.0+c1aa8ed895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-object-builder-api-v1-1.8.0+c1aa8ed895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-rendering-v0/1.1.2+92519afad5/fabric-rendering-v0-1.1.2+92519afad5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-rendering-v0/1.1.2+92519afad5/fabric-rendering-v0-1.1.2+92519afad5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-object-builders-v0-0.7.0+432ea18895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-object-builders-v0-0.7.0+432ea18895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-rendering-v1/1.6.0+a02b4463d5/fabric-rendering-v1-1.6.0+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-rendering-v1/1.6.0+a02b4463d5/fabric-rendering-v1-1.6.0+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-particles-v1-0.2.2+fb0d9b0e95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-particles-v1-0.2.2+fb0d9b0e95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-screen-api-v1/1.0.3+b7ab6121d5/fabric-screen-api-v1-1.0.3+b7ab6121d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-screen-api-v1/1.0.3+b7ab6121d5/fabric-screen-api-v1-1.0.3+b7ab6121d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-registry-sync-v0-0.5.0+c1aa8ed895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-registry-sync-v0-0.5.0+c1aa8ed895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-tool-attribute-api-v1/1.2.12+b7ab6121d5/fabric-tool-attribute-api-v1-1.2.12+b7ab6121d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-tool-attribute-api-v1/1.2.12+b7ab6121d5/fabric-tool-attribute-api-v1-1.2.12+b7ab6121d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-renderer-api-v1-0.3.0+8bcfced895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-renderer-api-v1-0.3.0+8bcfced895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-tag-extensions-v0/1.1.4+a02b4463d5/fabric-tag-extensions-v0-1.1.4+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-tag-extensions-v0/1.1.4+a02b4463d5/fabric-tag-extensions-v0-1.1.4+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-renderer-indigo-0.4.0+8bcfced895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-renderer-indigo-0.4.0+8bcfced895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-textures-v0/1.0.6+a02b4463d5/fabric-textures-v0-1.0.6+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-textures-v0/1.0.6+a02b4463d5/fabric-textures-v0-1.0.6+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-renderer-registries-v1-2.1.0+e2862de695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-renderer-registries-v1-2.1.0+e2862de695@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-api-base/0.3.0+a02b4463d5/fabric-api-base-0.3.0+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-api-base/0.3.0+a02b4463d5/fabric-api-base-0.3.0+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-rendering-data-attachment-v1-0.1.3+b7f9825d95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-rendering-data-attachment-v1-0.1.3+b7f9825d95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-biome-api-v1/3.1.11+9e521e13d5/fabric-biome-api-v1-3.1.11+9e521e13d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-biome-api-v1/3.1.11+9e521e13d5/fabric-biome-api-v1-3.1.11+9e521e13d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-rendering-fluids-v1-0.1.11+fb0d9b0e95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-rendering-fluids-v1-0.1.11+fb0d9b0e95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-crash-report-info-v1/0.1.5+be9da310d5/fabric-crash-report-info-v1-0.1.5+be9da310d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-crash-report-info-v1/0.1.5+be9da310d5/fabric-crash-report-info-v1-0.1.5+be9da310d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-rendering-v0-1.1.0+5341049095@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-rendering-v0-1.1.0+5341049095@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-game-rule-api-v1/1.0.6+a02b4463d5/fabric-game-rule-api-v1-1.0.6+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-game-rule-api-v1/1.0.6+a02b4463d5/fabric-game-rule-api-v1-1.0.6+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-rendering-v1-1.3.0+432ea18895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-rendering-v1-1.3.0+432ea18895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-keybindings-v0/0.2.2+36b77c3ed5/fabric-keybindings-v0-0.2.2+36b77c3ed5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-keybindings-v0/0.2.2+36b77c3ed5/fabric-keybindings-v0-0.2.2+36b77c3ed5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/modsoftheworld-1.16-1.0.8+mc1.16.1@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/modsoftheworld-1.16-1.0.8+mc1.16.1@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-key-binding-api-v1/1.0.4+a02b4463d5/fabric-key-binding-api-v1-1.0.4+a02b4463d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-key-binding-api-v1/1.0.4+a02b4463d5/fabric-key-binding-api-v1-1.0.4+a02b4463d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-resource-loader-v0-0.3.1+facf3bbf95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-resource-loader-v0-0.3.1+facf3bbf95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-resource-loader-v0/0.4.7+b7ab6121d5/fabric-resource-loader-v0-0.4.7+b7ab6121d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-resource-loader-v0/0.4.7+b7ab6121d5/fabric-resource-loader-v0-0.4.7+b7ab6121d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-screen-handler-api-v1-1.1.0+8724984195@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-screen-handler-api-v1-1.1.0+8724984195@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-structure-api-v1/1.1.10+be9da310d5/fabric-structure-api-v1-1.1.10+be9da310d5-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-api/fabric-structure-api-v1/1.1.10+be9da310d5/fabric-structure-api-v1-1.1.10+be9da310d5.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-structure-api-v1-1.0.1+fb0d9b0e95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-structure-api-v1-1.0.1+fb0d9b0e95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-tag-extensions-v0-1.0.3+ac8e8c5995@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-tag-extensions-v0-1.0.3+ac8e8c5995@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-textures-v0-1.0.4+eae12eb895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-textures-v0-1.0.4+eae12eb895@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-tool-attribute-api-v1-1.2.2+ccce563e95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-tool-attribute-api-v1-1.2.2+ccce563e95@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-api-base-0.1.3+12a8474ca7@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-api-base-0.1.3+12a8474ca7@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-networking-v0-0.1.10+e00ecb5fa7@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-networking-v0-0.1.10+e00ecb5fa7@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-loader-0.9.3+build.207@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/fabric-loader-0.9.3+build.207@net.fabricmc.yarn.1_16_3.1.16.3+build.12-v2.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.minecrell/terminalconsoleappender/1.2.0/c9e9c6ef25149f84e9ca5d133b4016749d95c1a2/terminalconsoleappender-1.2.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.minecrell/terminalconsoleappender/1.2.0/96d02cd3b384ff015a8fef4223bcb4ccf1717c95/terminalconsoleappender-1.2.0.jar">
+	<classpathentry sourcepath="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-loader/0.11.3/fabric-loader-0.11.3-sources.jar" kind="lib" path="D:/Eclipse Important Projects/CarveMyPumpkin/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_17_1_17_build_5_v2/net/fabricmc/fabric-loader/0.11.3/fabric-loader-0.11.3.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/dev-launch-injector/0.2.1+build.8/da8bef7e6e2f952da707f282bdb46882a0fce5e3/dev-launch-injector-0.2.1+build.8.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.minecrell/terminalconsoleappender/1.2.0/c9e9c6ef25149f84e9ca5d133b4016749d95c1a2/terminalconsoleappender-1.2.0-sources.jar" kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.minecrell/terminalconsoleappender/1.2.0/96d02cd3b384ff015a8fef4223bcb4ccf1717c95/terminalconsoleappender-1.2.0.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -464,12 +514,12 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/modules-2/files-2.1/net.fabricmc/fabric-loom/0.4-SNAPSHOT/9d9847397e2774672b21eb0fef31a8083e65d993/fabric-loom-0.4-SNAPSHOT.jar">
+	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/jars-8/26eb918ec50ed03568c05ffd1aaf4819/fabric-loom-0.8-SNAPSHOT.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/fabric-loom/yarn-1.16.3+build.12-v2-final.jar">
+	<classpathentry kind="lib" path="C:/Users/14695/.gradle/caches/fabric-loom/yarn-1.17+build.5-v2-final.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>

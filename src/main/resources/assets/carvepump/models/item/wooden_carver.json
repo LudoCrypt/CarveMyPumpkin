@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "carvepump:items/wooden_carver"
-    }
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "carvepump:items/wooden_carver"
+	}
 }

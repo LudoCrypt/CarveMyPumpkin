@@ -15,10 +15,9 @@ import net.minecraft.item.ItemStack;
 public class EndermanMixin {
 
 	@Inject(method = "isPlayerStaring", at = @At("HEAD"), cancellable = true)
-	private void isPlayerStaring(PlayerEntity player, CallbackInfoReturnable<Boolean> ci) {
-		ItemStack itemStack = (ItemStack) player.inventory.armor.get(3);
-		if (itemStack.getItem() instanceof BlockItem
-				&& ((BlockItem) itemStack.getItem()).getBlock() instanceof CarvableBlock) {
+	private void carvemypumpkin_isPlayerStaring(PlayerEntity player, CallbackInfoReturnable<Boolean> ci) {
+		ItemStack itemStack = (ItemStack) player.getInventory().armor.get(3);
+		if (itemStack.getItem() instanceof BlockItem && ((BlockItem) itemStack.getItem()).getBlock() instanceof CarvableBlock) {
 			ci.setReturnValue(false);
 		}
 	}

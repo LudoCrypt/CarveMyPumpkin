@@ -1,10 +1,7 @@
 package net.ludocrypt.carvepump.items;
 
 import java.util.Arrays;
-import java.util.Set;
 import java.util.function.Consumer;
-
-import com.google.common.collect.Sets;
 
 import net.ludocrypt.carvepump.CarveMyPumpkin;
 import net.ludocrypt.carvepump.blocks.CarvableBlock;
@@ -18,6 +15,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -25,16 +23,12 @@ import net.minecraft.world.World;
 
 public class CarverItem extends MiningToolItem {
 
-	private static final Set<Block> EFFECTIVE_BLOCKS = Sets
-			.newHashSet(new Block[] { Blocks.PUMPKIN, Blocks.CARVED_PUMPKIN, Blocks.JACK_O_LANTERN,
-					CarveMyPumpkin.CARVED_PUMPKIN, CarveMyPumpkin.JACK_O_LANTERN });
-
 	public CarverItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
-		super((float) attackDamage, attackSpeed, material, EFFECTIVE_BLOCKS, settings);
+		super((float) attackDamage, attackSpeed, material, BlockTags.HOE_MINEABLE, settings);
 	}
 
 	@Override
-	public boolean isEffectiveOn(BlockState state) {
+	public boolean isSuitableFor(BlockState state) {
 		if (state.getMaterial() == Material.GOURD) {
 			return true;
 		} else {
@@ -53,8 +47,7 @@ public class CarverItem extends MiningToolItem {
 
 		if (Arrays.stream(CarveMyPumpkin.carvableBlocks).anyMatch(t -> t.equals(world.getBlockState(pos).getBlock()))) {
 
-			if ((blockEntity instanceof CarvedBlockEntity && block instanceof CarvableBlock)
-					&& ((CarvableBlock) block).carvable) {
+			if ((blockEntity instanceof CarvedBlockEntity && block instanceof CarvableBlock) && ((CarvableBlock) block).carvable) {
 
 				CarvedBlockEntity carvedPumpkinBlockEntity = (CarvedBlockEntity) blockEntity;
 
@@ -66,37 +59,28 @@ public class CarverItem extends MiningToolItem {
 					for (int x = 0; x < 16; x++) {
 						for (int y = 0; y < 16; y++) {
 							if (dir == Direction.NORTH) {
-								if ((xHitPos >= x * 0.0625 && xHitPos <= (x + 1) * 0.0625)
-										&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
-									carvedPumpkinBlockEntity.setValue((-x) + 15, y,
-											(byte) (carvedPumpkinBlockEntity.getValue((-x) + 15, y) == 0 ? 1 : 0));
+								if ((xHitPos >= x * 0.0625 && xHitPos <= (x + 1) * 0.0625) && (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
+									carvedPumpkinBlockEntity.setValue((-x) + 15, y, (byte) (carvedPumpkinBlockEntity.getValue((-x) + 15, y) == 0 ? 1 : 0));
 								}
 							} else if (dir == Direction.EAST) {
-								if ((zHitPos >= x * 0.0625 && zHitPos <= (x + 1) * 0.0625)
-										&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
-									carvedPumpkinBlockEntity.setValue((-x) + 15, y,
-											(byte) (carvedPumpkinBlockEntity.getValue((-x) + 15, y) == 0 ? 1 : 0));
+								if ((zHitPos >= x * 0.0625 && zHitPos <= (x + 1) * 0.0625) && (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
+									carvedPumpkinBlockEntity.setValue((-x) + 15, y, (byte) (carvedPumpkinBlockEntity.getValue((-x) + 15, y) == 0 ? 1 : 0));
 								}
 							} else if (dir == Direction.SOUTH) {
-								if ((xHitPos >= x * 0.0625 && xHitPos <= (x + 1) * 0.0625)
-										&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
-									carvedPumpkinBlockEntity.setValue(x, y,
-											(byte) (carvedPumpkinBlockEntity.getValue(x, y) == 0 ? 1 : 0));
+								if ((xHitPos >= x * 0.0625 && xHitPos <= (x + 1) * 0.0625) && (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
+									carvedPumpkinBlockEntity.setValue(x, y, (byte) (carvedPumpkinBlockEntity.getValue(x, y) == 0 ? 1 : 0));
 								}
 							} else if (dir == Direction.WEST) {
-								if ((zHitPos >= x * 0.0625 && zHitPos <= (x + 1) * 0.0625)
-										&& (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
-									carvedPumpkinBlockEntity.setValue(x, y,
-											(byte) (carvedPumpkinBlockEntity.getValue(x, y) == 0 ? 1 : 0));
+								if ((zHitPos >= x * 0.0625 && zHitPos <= (x + 1) * 0.0625) && (yHitPos >= y * 0.0625 && yHitPos <= (y + 1) * 0.0625)) {
+									carvedPumpkinBlockEntity.setValue(x, y, (byte) (carvedPumpkinBlockEntity.getValue(x, y) == 0 ? 1 : 0));
 								}
 							}
 						}
 					}
 					if (context.getPlayer() != null) {
-						context.getStack().damage(1, (LivingEntity) context.getPlayer(),
-								(Consumer<LivingEntity>) ((p) -> {
-									((LivingEntity) p).sendToolBreakStatus(context.getHand());
-								}));
+						context.getStack().damage(1, (LivingEntity) context.getPlayer(), (Consumer<LivingEntity>) ((p) -> {
+							((LivingEntity) p).sendToolBreakStatus(context.getHand());
+						}));
 					}
 					if (carvedPumpkinBlockEntity.isUncarved()) {
 						world.setBlockState(pos, ((CarvableBlock) block).getCarvingBlock().getDefaultState(), 2);
@@ -107,13 +91,11 @@ public class CarverItem extends MiningToolItem {
 				}
 			} else if ((dir != Direction.UP && dir != Direction.DOWN)) {
 				if (block == Blocks.MELON) {
-					world.setBlockState(pos,
-							CarveMyPumpkin.CARVED_MELON.getDefaultState().with(CarvableBlock.FACING, dir), 2);
+					world.setBlockState(pos, CarveMyPumpkin.CARVED_MELON.getDefaultState().with(CarvableBlock.FACING, dir), 2);
 					useOnBlock(context);
 					return ActionResult.SUCCESS;
 				} else if (block == Blocks.PUMPKIN) {
-					world.setBlockState(pos,
-							CarveMyPumpkin.CARVED_PUMPKIN.getDefaultState().with(CarvableBlock.FACING, dir), 2);
+					world.setBlockState(pos, CarveMyPumpkin.CARVED_PUMPKIN.getDefaultState().with(CarvableBlock.FACING, dir), 2);
 					useOnBlock(context);
 					return ActionResult.SUCCESS;
 				} else {

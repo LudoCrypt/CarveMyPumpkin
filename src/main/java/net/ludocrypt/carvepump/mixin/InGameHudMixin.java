@@ -19,7 +19,9 @@ import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.render.BufferBuilder;
+import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.render.Tessellator;
+import net.minecraft.client.render.VertexFormat.DrawMode;
 import net.minecraft.client.render.VertexFormats;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.BlockItem;
@@ -59,9 +61,9 @@ public class InGameHudMixin {
 	private Identifier OUTLINE = new Identifier("carvepump", "textures/gui/pumpkin_blur_outline.png");
 
 	@Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerInventory;getArmorStack(I)Lnet/minecraft/item/ItemStack;"), cancellable = true)
-	private void render(MatrixStack matrices, float tickDelta, CallbackInfo ci) {
+	private void carvemypumpkin_render(MatrixStack matrices, float tickDelta, CallbackInfo ci) {
 
-		ItemStack itemStack = this.client.player.inventory.getArmorStack(3);
+		ItemStack itemStack = this.client.player.getInventory().getArmorStack(3);
 
 		if (itemStack.getItem() instanceof BlockItem) {
 			Block block = ((BlockItem) itemStack.getItem()).getBlock();
@@ -71,15 +73,14 @@ public class InGameHudMixin {
 				RenderSystem.disableDepthTest();
 				RenderSystem.depthMask(false);
 				RenderSystem.defaultBlendFunc();
-				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-				RenderSystem.disableAlphaTest();
-				this.client.getTextureManager().bindTexture(OUTLINE);
+				RenderSystem.setShader(GameRenderer::getPositionTexShader);
+				RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+				RenderSystem.setShaderTexture(0, OUTLINE);
 				Tessellator tessellator = Tessellator.getInstance();
 				BufferBuilder bufferBuilder = tessellator.getBuffer();
-				bufferBuilder.begin(7, VertexFormats.POSITION_TEXTURE);
+				bufferBuilder.begin(DrawMode.QUADS, VertexFormats.POSITION_TEXTURE);
 				bufferBuilder.vertex(0.0D, (double) this.scaledHeight, -90.0D).texture(0.0F, 1.0F).next();
-				bufferBuilder.vertex((double) this.scaledWidth, (double) this.scaledHeight, -90.0D).texture(1.0F, 1.0F)
-						.next();
+				bufferBuilder.vertex((double) this.scaledWidth, (double) this.scaledHeight, -90.0D).texture(1.0F, 1.0F).next();
 				bufferBuilder.vertex((double) this.scaledWidth, 0.0D, -90.0D).texture(1.0F, 0.0F).next();
 				bufferBuilder.vertex(0.0D, 0.0D, -90.0D).texture(0.0F, 0.0F).next();
 				tessellator.draw();
@@ -112,24 +113,19 @@ public class InGameHudMixin {
 							}
 
 							if (carving[x][oppY > 0 ? oppY - 1 : oppY] == 1 && carving[x < 15 ? x + 1 : x][oppY] == 1) {
-								CarveMyPumpkin.renderBlurSquare(client, dividedWidth, dividedHeight, x + 1, y + 1,
-										TOP_LEFT);
+								CarveMyPumpkin.renderBlurSquare(client, dividedWidth, dividedHeight, x + 1, y + 1, TOP_LEFT);
 							}
 
 							if (carving[x][oppY > 0 ? oppY - 1 : oppY] == 1 && carving[x > 0 ? x - 1 : x][oppY] == 1) {
-								CarveMyPumpkin.renderBlurSquare(client, dividedWidth, dividedHeight, x - 1, y + 1,
-										TOP_RIGHT);
+								CarveMyPumpkin.renderBlurSquare(client, dividedWidth, dividedHeight, x - 1, y + 1, TOP_RIGHT);
 							}
 
-							if (carving[x][oppY < 15 ? oppY + 1 : oppY] == 1
-									&& carving[x < 15 ? x + 1 : x][oppY] == 1) {
-								CarveMyPumpkin.renderBlurSquare(client, dividedWidth, dividedHeight, x + 1, y - 1,
-										BOTTOM_LEFT);
+							if (carving[x][oppY < 15 ? oppY + 1 : oppY] == 1 && carving[x < 15 ? x + 1 : x][oppY] == 1) {
+								CarveMyPumpkin.renderBlurSquare(client, dividedWidth, dividedHeight, x + 1, y - 1, BOTTOM_LEFT);
 							}
 
 							if (carving[x][oppY < 15 ? oppY + 1 : oppY] == 1 && carving[x > 0 ? x - 1 : x][oppY] == 1) {
-								CarveMyPumpkin.renderBlurSquare(client, dividedWidth, dividedHeight, x - 1, y - 1,
-										BOTTOM_RIGHT);
+								CarveMyPumpkin.renderBlurSquare(client, dividedWidth, dividedHeight, x - 1, y - 1, BOTTOM_RIGHT);
 							}
 						}
 					}
@@ -137,8 +133,7 @@ public class InGameHudMixin {
 
 				RenderSystem.depthMask(true);
 				RenderSystem.enableDepthTest();
-				RenderSystem.enableAlphaTest();
-				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+				RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
 			}
 		}

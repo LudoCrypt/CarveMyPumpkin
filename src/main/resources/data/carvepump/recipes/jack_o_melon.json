@@ -1,21 +1,3 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"pattern": [
-		"X",
-		"#"
-	],
-	"key": {
-		"X": {
-			"item": "carvepump:carved_melon"
-		},
-		"#": {
-			"item": "minecraft:torch"
-		}
-	},
-	"result": {
-		"item": "carvepump:jack_o_melon",
-		"data": {
-			"$": "i0"
-		}
-	}
+	"type": "carvepump:jack_o_melon_special"
 }

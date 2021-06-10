@@ -26,7 +26,7 @@ import net.minecraft.entity.passive.SnowGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.predicate.block.BlockStatePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.state.StateManager;
@@ -52,8 +52,7 @@ public class CarvableBlock extends BlockWithEntity {
 
 	public CarvableBlock(AbstractBlock.Settings settings, Block carvedBlock, Identifier renderId, boolean iscarvable) {
 		super(settings);
-		this.setDefaultState(
-				(BlockState) ((BlockState) this.stateManager.getDefaultState()).with(FACING, Direction.NORTH));
+		this.setDefaultState((BlockState) ((BlockState) this.stateManager.getDefaultState()).with(FACING, Direction.NORTH));
 		this.carvedBlock = carvedBlock;
 		this.renderId = renderId;
 		carvable = iscarvable;
@@ -70,8 +69,8 @@ public class CarvableBlock extends BlockWithEntity {
 	}
 
 	@Override
-	public BlockEntity createBlockEntity(BlockView world) {
-		return new CarvedBlockEntity();
+	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+		return new CarvedBlockEntity(pos, state);
 	}
 
 	@Override
@@ -86,12 +85,11 @@ public class CarvableBlock extends BlockWithEntity {
 			CarvedBlockEntity carvedPumpkinBlockEntity = (CarvedBlockEntity) blockEntity;
 			if (!world.isClient && !carvedPumpkinBlockEntity.isUncarved()) {
 				ItemStack itemStack = new ItemStack(state.getBlock());
-				CompoundTag compoundTag = carvedPumpkinBlockEntity.serializeCarving(new CompoundTag());
+				NbtCompound compoundTag = carvedPumpkinBlockEntity.serializeCarving(new NbtCompound());
 				if (!compoundTag.isEmpty()) {
 					itemStack.putSubTag("BlockEntityTag", compoundTag);
 				}
-				ItemEntity itemEntity = new ItemEntity(world, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D,
-						(double) pos.getZ() + 0.5D, itemStack);
+				ItemEntity itemEntity = new ItemEntity(world, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, itemStack);
 				itemEntity.setToDefaultPickupDelay();
 				world.spawnEntity(itemEntity);
 			}
@@ -119,7 +117,7 @@ public class CarvableBlock extends BlockWithEntity {
 	@Override
 	public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
 		ItemStack itemStack = new ItemStack(state.getBlock());
-		CompoundTag compoundTag = ((CarvedBlockEntity) world.getBlockEntity(pos)).serializeCarving(new CompoundTag());
+		NbtCompound compoundTag = ((CarvedBlockEntity) world.getBlockEntity(pos)).serializeCarving(new NbtCompound());
 		if (!compoundTag.isEmpty()) {
 			itemStack.putSubTag("BlockEntityTag", compoundTag);
 		}
@@ -153,18 +151,14 @@ public class CarvableBlock extends BlockWithEntity {
 			for (k = 0; k < this.getSnowGolemPattern().getHeight(); ++k) {
 				CachedBlockPosition cachedBlockPosition = result.translate(0, k, 0);
 				world.setBlockState(cachedBlockPosition.getBlockPos(), Blocks.AIR.getDefaultState(), 2);
-				world.syncWorldEvent(2001, cachedBlockPosition.getBlockPos(),
-						Block.getRawIdFromState(cachedBlockPosition.getBlockState()));
+				world.syncWorldEvent(2001, cachedBlockPosition.getBlockPos(), Block.getRawIdFromState(cachedBlockPosition.getBlockState()));
 			}
 
 			SnowGolemEntity snowGolemEntity = (SnowGolemEntity) EntityType.SNOW_GOLEM.create(world);
 			BlockPos blockPos = result.translate(0, 2, 0).getBlockPos();
-			snowGolemEntity.refreshPositionAndAngles((double) blockPos.getX() + 0.5D, (double) blockPos.getY() + 0.05D,
-					(double) blockPos.getZ() + 0.5D, 0.0F, 0.0F);
+			snowGolemEntity.refreshPositionAndAngles((double) blockPos.getX() + 0.5D, (double) blockPos.getY() + 0.05D, (double) blockPos.getZ() + 0.5D, 0.0F, 0.0F);
 			world.spawnEntity(snowGolemEntity);
-			var6 = world
-					.getNonSpectatingEntities(ServerPlayerEntity.class, snowGolemEntity.getBoundingBox().expand(5.0D))
-					.iterator();
+			var6 = world.getNonSpectatingEntities(ServerPlayerEntity.class, snowGolemEntity.getBoundingBox().expand(5.0D)).iterator();
 
 			while (var6.hasNext()) {
 				serverPlayerEntity2 = (ServerPlayerEntity) var6.next();
@@ -182,19 +176,16 @@ public class CarvableBlock extends BlockWithEntity {
 					for (int l = 0; l < this.getIronGolemPattern().getHeight(); ++l) {
 						CachedBlockPosition cachedBlockPosition3 = result.translate(k, l, 0);
 						world.setBlockState(cachedBlockPosition3.getBlockPos(), Blocks.AIR.getDefaultState(), 2);
-						world.syncWorldEvent(2001, cachedBlockPosition3.getBlockPos(),
-								Block.getRawIdFromState(cachedBlockPosition3.getBlockState()));
+						world.syncWorldEvent(2001, cachedBlockPosition3.getBlockPos(), Block.getRawIdFromState(cachedBlockPosition3.getBlockState()));
 					}
 				}
 
 				BlockPos blockPos2 = result.translate(1, 2, 0).getBlockPos();
 				IronGolemEntity ironGolemEntity = (IronGolemEntity) EntityType.IRON_GOLEM.create(world);
 				ironGolemEntity.setPlayerCreated(true);
-				ironGolemEntity.refreshPositionAndAngles((double) blockPos2.getX() + 0.5D,
-						(double) blockPos2.getY() + 0.05D, (double) blockPos2.getZ() + 0.5D, 0.0F, 0.0F);
+				ironGolemEntity.refreshPositionAndAngles((double) blockPos2.getX() + 0.5D, (double) blockPos2.getY() + 0.05D, (double) blockPos2.getZ() + 0.5D, 0.0F, 0.0F);
 				world.spawnEntity(ironGolemEntity);
-				var6 = world.getNonSpectatingEntities(ServerPlayerEntity.class,
-						ironGolemEntity.getBoundingBox().expand(5.0D)).iterator();
+				var6 = world.getNonSpectatingEntities(ServerPlayerEntity.class, ironGolemEntity.getBoundingBox().expand(5.0D)).iterator();
 
 				while (var6.hasNext()) {
 					serverPlayerEntity2 = (ServerPlayerEntity) var6.next();
@@ -213,13 +204,9 @@ public class CarvableBlock extends BlockWithEntity {
 
 	private BlockPattern getSnowGolemPattern() {
 		if (this.snowGolemPattern == null) {
-			this.snowGolemPattern = BlockPatternBuilder.start().aisle("^", "#", "#")
-					.where('^', CachedBlockPosition.matchesBlockState((state) -> {
-						return state != null && (Arrays.stream(CarveMyPumpkin.golemSpawningBlocks)
-								.anyMatch(t -> t.equals(state.getBlock())));
-					}))
-					.where('#', CachedBlockPosition.matchesBlockState(BlockStatePredicate.forBlock(Blocks.SNOW_BLOCK)))
-					.build();
+			this.snowGolemPattern = BlockPatternBuilder.start().aisle("^", "#", "#").where('^', CachedBlockPosition.matchesBlockState((state) -> {
+				return state != null && (Arrays.stream(CarveMyPumpkin.golemSpawningBlocks).anyMatch(t -> t.equals(state.getBlock())));
+			})).where('#', CachedBlockPosition.matchesBlockState(BlockStatePredicate.forBlock(Blocks.SNOW_BLOCK))).build();
 		}
 
 		return this.snowGolemPattern;
@@ -227,13 +214,9 @@ public class CarvableBlock extends BlockWithEntity {
 
 	private BlockPattern getIronGolemPattern() {
 		if (this.ironGolemPattern == null) {
-			this.ironGolemPattern = BlockPatternBuilder.start().aisle("~^~", "###", "~#~")
-					.where('^', CachedBlockPosition.matchesBlockState((state) -> {
-						return state != null && (Arrays.stream(CarveMyPumpkin.golemSpawningBlocks)
-								.anyMatch(t -> t.equals(state.getBlock())));
-					}))
-					.where('#', CachedBlockPosition.matchesBlockState(BlockStatePredicate.forBlock(Blocks.IRON_BLOCK)))
-					.where('~', CachedBlockPosition.matchesBlockState(MaterialPredicate.create(Material.AIR))).build();
+			this.ironGolemPattern = BlockPatternBuilder.start().aisle("~^~", "###", "~#~").where('^', CachedBlockPosition.matchesBlockState((state) -> {
+				return state != null && (Arrays.stream(CarveMyPumpkin.golemSpawningBlocks).anyMatch(t -> t.equals(state.getBlock())));
+			})).where('#', CachedBlockPosition.matchesBlockState(BlockStatePredicate.forBlock(Blocks.IRON_BLOCK))).where('~', CachedBlockPosition.matchesBlockState(MaterialPredicate.create(Material.AIR))).build();
 		}
 
 		return this.ironGolemPattern;
